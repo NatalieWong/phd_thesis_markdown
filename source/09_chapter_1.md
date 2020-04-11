@@ -23,7 +23,7 @@ Computer-generated graphics are projected onto real-world surfaces using a proje
 Projection-based AR provides a future vision of without the use of screens. It tries to merge the virtual graphics onto the environment in the reality. “Projection Mapping” is a related technology which relies on the use of computer vision to 3D scan the complex scenes in the environment, thus turning any real-world object into a screen for image projection.
 
 ### Current Interactive Information Wall using Xbox Kinect
-The Interactive Information Wall located in the Sir Run Run Shaw Building (RRS) on the 7/F at HKBU is currently using the projection-based AR technology to project information to the wall.
+The Interactive Information Wall located in the Sir Run Run Shaw Building (RRS) on the 7/F at HKBU is currently using the projection-based AR technology to project information on the wall.
 - A projector is mounted on the wall to project content on the wall.
 - A Kinect sensor is used to provide interaction between human and the projected computer graphics. It senses user’s gestures and transmit data to a desktop application running on a computer.
 
