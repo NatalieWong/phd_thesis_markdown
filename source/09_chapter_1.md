@@ -1,30 +1,53 @@
-# Introduction, with a citation
+# Introduction
 
 ## Background
 
-This is the introduction. Quisque finibus aliquet cursus. Integer in pellentesque tellus. Duis eu dignissim nulla, a porttitor enim. Quisque vehicula leo non ultrices finibus. Duis vehicula quis sem sit amet sollicitudin. Integer neque est, pharetra et auctor vel, iaculis interdum lectus.
+### Augmented Reality (AR)
+The definition of AR is that views of physical real-world environments are augmented with superimposed computer-generated images, hence enhancing users’ current perception of the reality.
+
+AR is gaining popularity in these days. Many companies and organizations are developing innovative projects based on AR technology and it has been widely applied in the fields of gaming, education, healthcare, retail and architecture etc.
+
+With vivid visual overlay added to the view of the real world, user experience for a task or product is greatly enhanced, bringing enormous positive impact to our daily lives as well as the industries.
+
+We are able to predict the AR technology will continue growing rapidly in the coming future.
 
 <!-- 
 To include a reference, add the citation key shown in the references.bib file.
 -->
 
-To include a citation to the text, just add the citation key shown in the references.bib file. The style of the citation is determined by the ref_format.csl file. For example, in The Living Sea you can find pictures of the Calypso [@Cousteau1963].
+### Projection-based AR
+Projection-based AR is one of the categories of AR technology. It can be done by using a projector, a camera and a computer.
 
-In neque mauris, maximus at sapien a, iaculis dignissim justo. Aliquam erat volutpat. Praesent varius risus auctor est ultricies, sit amet consequat nisi laoreet. Suspendisse non est et mauris pharetra sagittis non porta justo. Praesent malesuada metus ut sapien sodales ornare.
+Computer-generated graphics are projected onto real-world surfaces using a projector. Interaction between human and the projected graphics are allowed by using a camera to recognize real-world objects and detect movements, and a computer to make responses.
 
-## The middle bit
+Projection-based AR provides a future vision of without the use of screens. It tries to merge the virtual graphics onto the environment in the reality. “Projection Mapping” is a related technology which relies on the use of computer vision to 3D scan the complex scenes in the environment, thus turning any real-world object into a screen for image projection.
 
-This is the middle bit. Phasellus quis ex in ipsum pellentesque lobortis tincidunt sed massa. Nullam euismod sem quis dictum condimentum. Suspendisse risus metus, elementum eu congue quis, viverra ac metus. Donec non lectus at lectus euismod laoreet pharetra semper dui. Donec sed eleifend erat, vel ultrices nibh. Nam scelerisque turpis ac nunc mollis, et rutrum nisl luctus.
+### Current Interactive Information Wall using Xbox Kinect
+The Interactive Information Wall located in the Sir Run Run Shaw Building (RRS) on the 7/F at HKBU is currently using the projection-based AR technology to project information to the wall.
+- A projector is mounted on the wall to project content on the wall.
+- A Kinect sensor is used to provide interaction between human and the projected computer graphics. It senses user’s gestures and transmit data to a desktop application running on a computer.
 
-Duis faucibus vestibulum elit, sit amet lobortis libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed at cursus nibh. Sed accumsan imperdiet interdum. Proin id facilisis tortor. Proin posuere a neque nec iaculis. Suspendisse potenti. Nullam hendrerit ante mi, vitae iaculis dui laoreet eu.
+## Objective
+This project aims to enhance the Interactive Information Wall at HKBU by further utilizing the technology of Projection-based AR.
 
-Cras eleifend velit diam, eu viverra mi volutpat ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus leo nec dui imperdiet, tincidunt ornare orci venenatis. Maecenas placerat efficitur est, eu blandit magna hendrerit eu.
+### Problems of the Current Interactive Information Wall
+The current Interactive Information Wall has the following 2 major problems.
 
-### Subsection of the middle bit
+#### *System - Slow Response Time*
+In the index page, user has to raise up their hand to summon the menu. After that, however, the system takes an unknown time, usually more than 3 minutes to respond.
 
-This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac suscipit ante. Cras massa elit, pellentesque eget nisl ut, malesuada rutrum risus. Nunc in venenatis mi. Curabitur sit amet suscipit eros, non tincidunt nibh. Phasellus lorem lectus, iaculis non luctus eget, tempus non risus. Suspendisse ut felis mi.
+#### *Kinect Sensor - Insensitive to User’s Gestures*
+User has to move the palm in the air to control the cursor. However, the Kinect sensor is a bit insensitive to the palm’s movements, and sometimes a cursor lag will happen. User may encounter difficulties in controlling the cursor and move it to the desired position on the projected screen.
 
-## Summary of chapters
+There is another issue regarding the current design of the “click” action. User has to hold their hand in the air still for about 3 seconds to complete the “click” action. 
+
+### Android Lantern - an Alternative to the Kinect Sensor and current Computer System
+
+![banner-lantern-internal](https://lh3.googleusercontent.com/3iPwZB9gchkw2s2yITK9BLdrBTrHS38ter2QOt-WZn9i2k80Q0EirODlOin8osvCSSshPWzQnJbk=s300 "banner-lantern-internal") ![banner-lantern-projection](https://lh3.googleusercontent.com/QGS5ZU5DCoCsjDu2ckgtxKGkwG9JGiGfwmjPQiiLPmLtgOSs-taNnomEUzCb3MIMn-3n8QgX-meU=s300 "banner-lantern-projection")
+
+Inspired by the [Android Things Lantern](https://github.com/nordprojects/lantern) developed by 	Nord Projects, the current Kinect sensor and the system could be replaced by the Android Lantern which can transform any surface into a projected user interface in the hope of enhancing the user experience by developing an Android application to improve to response time and make use of Computer Vision and Machine Learning to allow user interacting with the virtually projected graphics in a real-time manner.
+
+<!-- ## Summary of chapters -->
 
 <!-- 
 For italic, add one * on either side of the text
@@ -32,6 +55,6 @@ For bold, add two * on either side of the text
 For bold and italic, add _** on either side of the text
 -->
 
+<!--
 This is a brief outline of what went into each chapter. **Chapter 1** gives a background on duis tempus justo quis arcu consectetur sollicitudin.  **Chapter 2** discusses morbi sollicitudin gravida tellus in maximus.  **Chapter 3** discusses vestibulum eleifend turpis id turpis sollicitudin aliquet.  **Chapter 4** shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius.
-
-
+-->
