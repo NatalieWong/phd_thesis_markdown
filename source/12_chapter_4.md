@@ -34,20 +34,23 @@ The Python script used for the training and evaluation process is `object_detect
 
 #### TensorBoard Records for Model Training and Evaluation
 ***Model trained with 1,500 steps***
-![TensorBoard-py2-1500steps-DetectionBoxes_Precision](https://lh3.googleusercontent.com/mY6XtIKTaJBBpOpg4eWwm8O1rYIMKJSbTRkVQRPxU3hFtGC_8invfQ46lH2govwe9RQ3KeNwzuqD=s300 "TensorBoard-py2-1500steps-DetectionBoxes_Precision") ![TensorBoard-py2-1500steps-Loss](https://lh3.googleusercontent.com/GirLRgmtZctNeCP2NpEWCyMQrDu6B9vNLjxI4bcqZFGLn-xlr5gxA57aD6jttgDvn8ZYBxZqs_ZD=s300 "TensorBoard-py2-1500steps-Loss")
+
+![TensorBoard-py2-1500steps-DetectionBoxes_Precision](https://lh3.googleusercontent.com/mY6XtIKTaJBBpOpg4eWwm8O1rYIMKJSbTRkVQRPxU3hFtGC_8invfQ46lH2govwe9RQ3KeNwzuqD=s300 "TensorBoard-py2-1500steps-DetectionBoxes_Precision"){width=50%} ![TensorBoard-py2-1500steps-Loss](https://lh3.googleusercontent.com/GirLRgmtZctNeCP2NpEWCyMQrDu6B9vNLjxI4bcqZFGLn-xlr5gxA57aD6jttgDvn8ZYBxZqs_ZD=s300 "TensorBoard-py2-1500steps-Loss"){width=50%}
 
 ***Model trained with 30,000 steps***
-![TensorBoard-30k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/XIuFArRQobKXILukD0iS40h7lghyaVSXm9SUtC1tt_zQa0RDrw_5ZctdWkmJjbGGu7-XabEGSTGJ=s300 "TensorBoard-30k-DetectionBoxes_Precision") ![TensorBoard-30k-loss](https://lh3.googleusercontent.com/ggUpjPBXmh6AbNd_gtKx9aW2GAHW0v4pfMkO4YN8TjNSaKVEa6C4kS0I09Yi0J2CTzwp0ouArONf=s300 "TensorBoard-30k-loss")
+
+![TensorBoard-30k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/XIuFArRQobKXILukD0iS40h7lghyaVSXm9SUtC1tt_zQa0RDrw_5ZctdWkmJjbGGu7-XabEGSTGJ=s300 "TensorBoard-30k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-30k-loss](https://lh3.googleusercontent.com/ggUpjPBXmh6AbNd_gtKx9aW2GAHW0v4pfMkO4YN8TjNSaKVEa6C4kS0I09Yi0J2CTzwp0ouArONf=s300 "TensorBoard-30k-loss"){width=50%}
 
 ***Model trained with 50,000 steps***
-![TensorBoard-py2-50k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/m3O4y9yBSJAYxu4YX_gVHaUB3xUACzioKBnL7a4fYADzcB6H0OnvuVoKjEQn4CemOYK6GCC934NE=s300 "TensorBoard-py2-50k-DetectionBoxes_Precision") ![TensorBoard-py2-50k-Loss](https://lh3.googleusercontent.com/F2FxcJ_xRNyHbS2s02dBeJT08_ydSm0KGE9M6dLhRa2vl0CyOh3oRji9wdOFUWboPK5INgTpYmds=s300 "TensorBoard-py2-50k-Loss")
+
+![TensorBoard-py2-50k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/m3O4y9yBSJAYxu4YX_gVHaUB3xUACzioKBnL7a4fYADzcB6H0OnvuVoKjEQn4CemOYK6GCC934NE=s300 "TensorBoard-py2-50k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-py2-50k-Loss](https://lh3.googleusercontent.com/F2FxcJ_xRNyHbS2s02dBeJT08_ydSm0KGE9M6dLhRa2vl0CyOh3oRji9wdOFUWboPK5INgTpYmds=s300 "TensorBoard-py2-50k-Loss"){width=50%}
 
 The value of mAP climbed and the value of the total loss decreased gradually throughout the training processes, indicating that hand detection models were well trained.
 
 #### Performance of inference on Samsung Note 3
 The following chart shows the confidence of hand detection results (in %) corresponding to the models' total number of training steps. Higher confidence means that the model has a higher accuracy in the detection of a hand.
 
-![samsung-note-3-v1-confidence](https://lh3.googleusercontent.com/HCq9EoNYWiDGpci4P5ByuX1dFC6fcOE3yofhZXBJ2k2v8assNqYE2SUfvsCQqemKgSuGJuZUYqBj=s600 "samsung-note-3-v1-confidence")
+![samsung-note-3-v1-confidence](https://lh3.googleusercontent.com/HCq9EoNYWiDGpci4P5ByuX1dFC6fcOE3yofhZXBJ2k2v8assNqYE2SUfvsCQqemKgSuGJuZUYqBj=s600 "samsung-note-3-v1-confidence") \
 
 The model with 500 training steps is able to detect a hand, however, the confidence of the detection results is low. The models with training steps greater than or equal to 1,500 have significant higher confidence. Smoother detection of a hand was achieved using the models with training steps greater than or equal to 15,000, however, there could be multiple detection results for a single.
 
@@ -64,23 +67,25 @@ All the 3 models were trained using one CPU in the desktop computer. The Python 
 
 #### Total Training Time of the models
 Two models trained based on EgoHands dataset:
+
 | 50,000 steps | 100,000 steps |
 |:--:|:--:|
 | 37.1 hours (2228 minutes) | 99 hours (5967 minutes) |
 
-<br>
-
 The model trained based on my own dataset:
+
 | 50,000 steps | 
 |:--:|
 | 49.5 hours (2969 minutes) |
 
 #### TensorBoard Records for Model Training and Evaluation
 ***Model trained based on EgoHands dataset with 100,000 steps***
-![TensorBoard-v2-100k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/j3xkeDb8CCjjXpOIz_tuDUvzoIt1iZb-CiZRTNcp9w_xOuyvTU4tmF0BqoQUtDFGCLi78XF0awI1=s300 "TensorBoard-v2-100k-DetectionBoxes_Precision") ![TensorBoard-v2-100k-Losses](https://lh3.googleusercontent.com/oFu5vcXGnllQMMf5DdD3_9QUTvFPsAqjvlDRvO7Qsr4Ud0XBr3V85DvTp0YKQk-g3p2P7RcfFjOs=s300 "TensorBoard-v2-100k-Losses")
+
+![TensorBoard-v2-100k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/j3xkeDb8CCjjXpOIz_tuDUvzoIt1iZb-CiZRTNcp9w_xOuyvTU4tmF0BqoQUtDFGCLi78XF0awI1=s300 "TensorBoard-v2-100k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-v2-100k-Losses](https://lh3.googleusercontent.com/oFu5vcXGnllQMMf5DdD3_9QUTvFPsAqjvlDRvO7Qsr4Ud0XBr3V85DvTp0YKQk-g3p2P7RcfFjOs=s300 "TensorBoard-v2-100k-Losses"){width=50%}
 
 ***Model trained based on my own dataset with 50,000 steps***
-![TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/lvAtkjAL0PjtYvIuP1qnjzlJukQzxYqvPeXytE_tiXP96_cU639eCr7Q0XI29ZdDKt-N0Fklnr8m=s300 "TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision") ![TensorBoard-mydataset-v2-50k-Losses](https://lh3.googleusercontent.com/Phtcs-p35q2cM8zXq2AN8pLp2qk9GhvSIGDGBhWkmmCbeRluSI3SrEdW11hTU49rGzWjNyx6VAyr=s300 "TensorBoard-mydataset-v2-50k-Losses")
+
+![TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/lvAtkjAL0PjtYvIuP1qnjzlJukQzxYqvPeXytE_tiXP96_cU639eCr7Q0XI29ZdDKt-N0Fklnr8m=s300 "TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-mydataset-v2-50k-Losses](https://lh3.googleusercontent.com/Phtcs-p35q2cM8zXq2AN8pLp2qk9GhvSIGDGBhWkmmCbeRluSI3SrEdW11hTU49rGzWjNyx6VAyr=s300 "TensorBoard-mydataset-v2-50k-Losses"){width=50%}
 
 In general, the mAP value rose and the value of the total loss fell throughout the training processes, indicating that hand detection models were successfully trained.
 
@@ -89,7 +94,7 @@ For the model trained with 100,000 steps based on EgoHands dataset, the mAP valu
 #### Performance of inference on Raspberry Pi 3 B+ Model through Android application
 The following chart shows the confidence of hand detection results (in %) corresponding to the models' total number of training steps. The 2 models were trained based on the EgoHands dataset.
 
-![rpi3-v2-confidence](https://lh3.googleusercontent.com/zeCXQhkup5DCvWRXA5Jet5VeLAUV2ngtU0RXUL30et6DLIg1LFBdFXkOAoGuGOIDwYIZb9P76vkz=s600 "rpi3-v2-confidence")
+![rpi3-v2-confidence](https://lh3.googleusercontent.com/zeCXQhkup5DCvWRXA5Jet5VeLAUV2ngtU0RXUL30et6DLIg1LFBdFXkOAoGuGOIDwYIZb9P76vkz=s600 "rpi3-v2-confidence") \
 
 Both of the models have a high accuracy of hand detection. The positions of a hand across the images could be located very accurately with with less than 1 second delay, almost a real-time detection.
 
@@ -111,20 +116,22 @@ For the hand detection model training process based on the EgoHands dataset, I h
 
 The combination of a pre-trained model and the Python script(s) used for the training process is summarized as follows.
 
-|  | Quantized SSD MobileNet V1 | Quantized SSD MobileNet V2 |
+| `object_detection/` | Quantized SSD MobileNet V1 | Quantized SSD MobileNet V2 |
 |:--:|:--:|:--:|
-| `object_detection/model_main.py` | ✅<br>(works well with 50,000 as the target no. of training steps but unable to reach 100,000 training steps on a desktop computer with one CPU) | ❌ |
-| `object_detection/legacy/train.py` and `object_detection/legacy/eval.py` | ❌ | ✅ |
+| `model_main.py` | Yes (works well with 50,000 as the target no. of training steps but unable to reach 100,000 training steps on a desktop computer with one CPU) | No |
+| `legacy/train.py` and `legacy/eval.py` | No | Yes |
 
 
 ### Conclusion of the Hand Detection Models' Performance
 Among all the hand detection models that I have trained so far, the best hand detection model is trained using the EgoHands dataset prepared by Indiana University and the quantized SSD MobileNet V2 pre-trained model. The following graphs compare the hand detection confidence among the best 2 hand detection models re-trained from quantized SSD MobileNet V1/V2 with 50,000 and 100,000 steps respectively using EgoHands dataset as well as the model re-trained from quantized SSD MobileNet V2 with 50,000 steps using my own dataset.
 
 ***Comparison of hand detection confidence running on the smartphone***
-![samsung-note-3-v1-v2-mydataset-confidence](https://lh3.googleusercontent.com/I-useYio3d5II3mWNLnz15jvkBzaOM9mw_08xfr8G8nwchul9xCClNBtjs2hJruDwTasF6WQsIM7=s680 "samsung-note-3-v1-v2-mydataset-confidence")
+
+![samsung-note-3-v1-v2-mydataset-confidence](https://lh3.googleusercontent.com/I-useYio3d5II3mWNLnz15jvkBzaOM9mw_08xfr8G8nwchul9xCClNBtjs2hJruDwTasF6WQsIM7=s680 "samsung-note-3-v1-v2-mydataset-confidence") \
 
 ***Comparison of hand detection confidence running in the Android application on Raspberry Pi 3 B+ Model***
-![enter image description here](https://lh3.googleusercontent.com/gDET1rpTGtdHTSZ5tH6yhLG6c7_a8aPPi3WHo5r8AnhYMrqmL3rNTBsR-6rEFz2GOYe3y2Mxz9dR=s680 "rpi3-v1-v2-mydataset-confidence")
+
+![enter image description here](https://lh3.googleusercontent.com/gDET1rpTGtdHTSZ5tH6yhLG6c7_a8aPPi3WHo5r8AnhYMrqmL3rNTBsR-6rEFz2GOYe3y2Mxz9dR=s680 "rpi3-v1-v2-mydataset-confidence") \
 
 To conclude, a good hand detection model for mobile application, which is able to locate a hand accurately and with minimal delay or real-time hand detection, can only be generated by using a quality dataset, and re-training a pre-trained object detection model with higher accuracy and low latency like quantized SSD MobileNet V2.
 

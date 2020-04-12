@@ -27,9 +27,10 @@ Google Cloud Firestore is used to be the database of the Android application sto
 ## Implementation
 ### User Interface of Android application
 #### Fragments
-The News page, Gallery page, Department Staff Information page and their inner pages exist as fragments in the Android application. The following is a graphical version of the navigation graph in `mobile_navigation.xml`.
 
-![enter image description here](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600 "navigation graph")
+The News page, Gallery page, Department Staff Information page and their inner pages exist as fragments in the Android application. Figure 3.3 shows a graphical version of the navigation graph in `mobile_navigation.xml`.
+
+![Navigation Graph](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600)
 
 In `activity_main.xml`, all the layout of the fragments defined in `mobile_navigation.xml` will be connected to the fragment layout below so that user can navigate around the Android application to view different pages.
 ```xml
@@ -293,6 +294,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 	I have selected quantized SSD MobileNet V1 and V2 pre-trained object detection model from [Tensorflow detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) for the re-training process. This is because currently only SSD MobileNet models can be converted into TFLite format, which is optimized to be executed efficiently on mobile and embedded devices with limited computational and memory resources like mobile phones and Raspberry Pi.
 
 	I have to modify a few lines in `pipeline.config` under the pre-trained model folder so as to customise the training pipeline and strategy suitable for my dataset.
+
 	- `num_classes: 1`. There is only one class label - hand.
 	- Set the `num_steps:` to the total number of training steps for the hand detection model.
 	- Set the `num_examples:` to the total number of evaluation steps for the hand detection model.
@@ -371,8 +373,8 @@ From [Victor Dibia's hand detector project](https://github.com/victordibia/handt
 - Hands in the images are big and can be seen clearly. This is because all the images are captured from an egocentric view by Google Glasses.
 - All images are in the same size of 1280 x 720 pixels, the HD standard format.
 
-![EgoHands-quality-dataset-1](https://lh3.googleusercontent.com/r1I0TOX_vbdwXcjAw_PXHrdqKQFyhFU3WMH_o72d9Xm7r7U5WeNxy466DGLTiKDyn6CkxYrzHhNa=s320 "EgoHands-quality-dataset-1") ![EgoHands-quality-dataset-2](https://lh3.googleusercontent.com/fKnsXQsTx2siqzTo5pjWJU0_RIc9c613imPUulyDTpSoIKbP1E3uj6yx47UgaieYspSnVIRUl-N0=s320 "EgoHands-quality-dataset-2")
-![EgoHands-quality-dataset-3](https://lh3.googleusercontent.com/OuY8WWsjIresqMU2k0L-8xsSNVWE-MD54Wa-OUkh_g9axQqVl7zYAmz7Mt7RfszE6u8yKdSirMEq=s320 "EgoHands-quality-dataset-3") ![EgoHands-quality-dataset-4](https://lh3.googleusercontent.com/FVn0v8iAU79kOmbIk7E5kiS-D5q5pIZa6a9NzzWFIaX83imNooDa-EqF_G7GypHSsbbXibq1eemV=s320 "EgoHands-quality-dataset-4")
+![EgoHands-quality-dataset-1](https://lh3.googleusercontent.com/r1I0TOX_vbdwXcjAw_PXHrdqKQFyhFU3WMH_o72d9Xm7r7U5WeNxy466DGLTiKDyn6CkxYrzHhNa=s320 "EgoHands-quality-dataset-1"){width=50%} ![EgoHands-quality-dataset-2](https://lh3.googleusercontent.com/fKnsXQsTx2siqzTo5pjWJU0_RIc9c613imPUulyDTpSoIKbP1E3uj6yx47UgaieYspSnVIRUl-N0=s320 "EgoHands-quality-dataset-2"){width=50%}
+![EgoHands-quality-dataset-3](https://lh3.googleusercontent.com/OuY8WWsjIresqMU2k0L-8xsSNVWE-MD54Wa-OUkh_g9axQqVl7zYAmz7Mt7RfszE6u8yKdSirMEq=s320 "EgoHands-quality-dataset-3"){width=50%} ![EgoHands-quality-dataset-4](https://lh3.googleusercontent.com/FVn0v8iAU79kOmbIk7E5kiS-D5q5pIZa6a9NzzWFIaX83imNooDa-EqF_G7GypHSsbbXibq1eemV=s320 "EgoHands-quality-dataset-4"){width=50%}
 
 The [`egohands_dataset_clean.py`](https://github.com/victordibia/handtracking/blob/master/egohands_dataset_clean.py) provided in Victor Dibia's hand detector project helps me to download the dataset from the website, clean the files in the dataset and generate two CSV files, `train_labels.csv` and `test_labels.csv`. The cleaning process includes
 - reading the `polygons.mat` files which contains the annotations of the hand bounding boxes in all the images,
@@ -574,7 +576,7 @@ private fun processImage() {
 ```
 The method `getLocation()` (written in `.location` for Kotlin) returned a `RectF` object and I decided to draw the red dot, i.e. the hand position indicator on UI, using the center x and y of the `RectF` object.
 
-![LanternInfoWall-hand-indicator](https://lh3.googleusercontent.com/SfzR2rlxlDGYxEt1NnaaGlHl1PyT3B_aWul2D-cR8gj48kU0WKqGtlYCzIkeLGv3SY66ixJm0VF2=s600 "LanternInfoWall-hand-indicator")
+![LanternInfoWall-hand-indicator](https://lh3.googleusercontent.com/SfzR2rlxlDGYxEt1NnaaGlHl1PyT3B_aWul2D-cR8gj48kU0WKqGtlYCzIkeLGv3SY66ixJm0VF2=s600 "LanternInfoWall-hand-indicator") \
 
 Since the image is has been resized to 300 x 300 for hand detection, I have to resize the image back to its original size of 1820 x 720 by calling the `invert()` method of the `Matrix` class. Similarly, the center x and y coordinates of the `RectF` object have to be transformed so that the location of the hand can be correctly shown on the UI. This can be done by calling the `mapRect()` method of the `Matrix` class.
 ```kotlin
@@ -639,13 +641,14 @@ The Generator is a number of Python scripts specialized for automatically detect
 ***Flaws in Egohands Dataset***
 
 For the Egohands dataset, the hand gestures captured in most of the images do not exactly suit my need for hand detection on the Interactive Information Wall. These gestures include:
+
 - holding the cards while playing card games
 - holding the chess pieces while playing chess
 - holding wooden blocks while playing Jenga
 - holding and assembling the puzzles
 
-![EgoHands-dataset-flaws-1](https://lh3.googleusercontent.com/msClRGGzxPWStH4-IQ2TgFO27XygxAD2kLo2JxAK62I4VW9kCxTYOuNU8YnYlx0bEbSsnSnWzrw_=s320 "EgoHands-dataset-flaws-1") ![EgoHands-dataset-flaws-2](https://lh3.googleusercontent.com/ar41yYFN64j0b7c8LgZ8JBo6zD6z_RCCU0J8F-r3E_HUTz0RuOwBqL9FqFdgIr7y-eDWLU_n5sky=s320 "EgoHands-dataset-flaws-2")
-![EgoHands-dataset-flaws-3](https://lh3.googleusercontent.com/6ummLnkdYDooi_GgMchrzG2bEij-QDTp2HCIlD0GRkoPJYQ4OjUEiML-auVLf-oiMmx1iYIsGs6B=s320 "EgoHands-dataset-flaws-3") ![EgoHands-dataset-flaws-4](https://lh3.googleusercontent.com/R0zFUR7oqH5r6VYo4cVI5-_SktRx-dTy3UMOywdnjG51pzKpsoBU8KMzXdxgLqXw6oSDd2YGkr09=s320 "EgoHands-dataset-flaws-4") 
+![EgoHands-dataset-flaws-1](https://lh3.googleusercontent.com/msClRGGzxPWStH4-IQ2TgFO27XygxAD2kLo2JxAK62I4VW9kCxTYOuNU8YnYlx0bEbSsnSnWzrw_=s320 "EgoHands-dataset-flaws-1"){width=50%} ![EgoHands-dataset-flaws-2](https://lh3.googleusercontent.com/ar41yYFN64j0b7c8LgZ8JBo6zD6z_RCCU0J8F-r3E_HUTz0RuOwBqL9FqFdgIr7y-eDWLU_n5sky=s320 "EgoHands-dataset-flaws-2"){width=50%}
+![EgoHands-dataset-flaws-3](https://lh3.googleusercontent.com/6ummLnkdYDooi_GgMchrzG2bEij-QDTp2HCIlD0GRkoPJYQ4OjUEiML-auVLf-oiMmx1iYIsGs6B=s320 "EgoHands-dataset-flaws-3"){width=50%} ![EgoHands-dataset-flaws-4](https://lh3.googleusercontent.com/R0zFUR7oqH5r6VYo4cVI5-_SktRx-dTy3UMOywdnjG51pzKpsoBU8KMzXdxgLqXw6oSDd2YGkr09=s320 "EgoHands-dataset-flaws-4"){width=50%} 
 
 With these gestures, a few fingers disappear from the first person view and fingers are curled inward. It turns out that a gesture that is holding something in the hand has a higher confidence, i.e. easier to be detected as hand. However, images with gestures of clicking something are what I am looking for as I want to train a hand detection model to enable the user clicking the virtually projected graphics on the wall. Therefore, I decided to collect images of open hands with either index fingers or all fingers pointing upward.
 
@@ -753,19 +756,29 @@ After that, two CSV files, one for model training and another for model evaluati
 
 Finally, I have to run `generate_tfrecord.py` to generate two TFRecord files for the input of the hand detection model training.
 
+\newpage
+
 #### Limitations
 I have found several limitations while the Python scripts were executing.
+
 - Only one hand can be detected in each frame.
+
 	![video-frame-error-one-hand](https://lh3.googleusercontent.com/jtaiN--dj8B3zmrw1i-7kFktdOgfKziHYiItmOSvmMBKziBe03KOoQzMp725T51aR0MEzM6Gj6l7=s330 "video-frame-error-one-hand") ![video-frame-error-one-hand](https://lh3.googleusercontent.com/zqRW8K0wgu1bhmj2Jp_X5uNXjej2ibRBpMvqAkZtwT1r8X7cVdTZQfMiWnnWgBt0pX8h7ujEumfO=s300 "video-frame-error-one-hand-2")
 	
+\newpage
+
 - Hands which are too big (i.e. hands which are too close to the camera) can hardly be detected or only fingers can be detected.
 	![video-frame-error-too-close](https://lh3.googleusercontent.com/KcxKLXVEk9pyUzNFApWdNjsPOvWVViVpamyhvkiFPvupVvzy5Zo0w_mJYx4SYB2MKBMvpJutsMGc=s320 "video-frame-error-too-close") ![video-frame-error-too-close](https://lh3.googleusercontent.com/M1R6hsMjL5jFKfz8r86KGPV4GxSAAv0NENW7Is9iNqAPm_Op2U-t1vOLeYSrz-kToTRzxpkAJtuW=s320 "video-frame-error-too-close-2")
 
+\newpage
+
 - Other objects appeared in the frame having a similar color with skin will be wrongly classified as hand.
+
 	![video-frame-error-similar-color](https://lh3.googleusercontent.com/tubuu7JQmLgXvLGeTrcRThyQ5hl4zriDgMMyuG5OcYlZnNpdMSNaVsvjJDNbccHO1Xo7Ax4nZe2C=s320 "video-frame-error-similar-color") ![video-frame-error-similar-color](https://lh3.googleusercontent.com/dJX31LwV9bW7OT3lTK9kj2voMjkmaJ1mBb2Iiu5m-9qSKsz4kSDQswTjSHAGIZNGNFhzy5bP7sQQ=s320 "video-frame-error-similar-color-2")
 
 #### Possible Ways to Overcome the Limitations
 I have not yet figured out the solutions for detecting multiple hands, however, to deal with the last two limitations, I can collect images from the following types of videos so as to gather better training data.
+
 - People playing the piano
 - People typing words on the keyboard, and
 - People folding Origami models.

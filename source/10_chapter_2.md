@@ -9,6 +9,7 @@ introduces methodology used throughout the thesis.
 ## Application Architecture
 ### Hardware
 Android Lantern is a portable interactive device comprised of
+
 - a single-board computer --- Raspberry Pi 3 Model B+
 - a palm-sized laser projector, and
 - a Raspberry Pi camera module.
@@ -24,6 +25,7 @@ Kotlin and Java are the main programming language for the Android application de
 
 #### User Interface (UI)
 The Information Wall displays three kinds of information, which are
+
 - News,
 - Gallery, and
 - Department Staff Information.
@@ -70,7 +72,7 @@ The hand detection model trained in this project produces excellent results in t
 
 The hand detection process is targeted to be run on a video or personal computers with a web camera capturing video stream using a [custom Python script](https://github.com/victordibia/handtracking/blob/master/utils/detector_utils.py) in the project. Multiple hands can be detected in each frame of the video or video stream from the web camera. Bounding boxes are drawn in each frame to visualize the detection results.
 
-![VictorDibia-HandTrack-demo](https://lh3.googleusercontent.com/E9T-y33nTByciI60NNBlJuNJfRxrx2csj85gv_CIK9oPmmGaWX7NPlRInPr4dwDbftXU4kfeOoVs=s300 "VictorDibia-HandTrack-demo") ![enter image description here](https://lh3.googleusercontent.com/FfdBQBQ6__LyzcfYffHRIbM4JiMerzaA_yggnboNCs34bL_9Dom7OaWofOph5w1y7PYVORkypeWP=s250 "VictorDibia-HandTrack-video-demo")
+![VictorDibia-HandTrack-demo](https://lh3.googleusercontent.com/E9T-y33nTByciI60NNBlJuNJfRxrx2csj85gv_CIK9oPmmGaWX7NPlRInPr4dwDbftXU4kfeOoVs=s300 "VictorDibia-HandTrack-demo"){width=55%} ![enter image description here](https://lh3.googleusercontent.com/FfdBQBQ6__LyzcfYffHRIbM4JiMerzaA_yggnboNCs34bL_9Dom7OaWofOph5w1y7PYVORkypeWP=s250 "VictorDibia-HandTrack-video-demo"){width=45%}
 
 The dataset being used to train this model is [EgoHands](http://vision.soic.indiana.edu/projects/egohands/) prepared by Indiana University. Hands are annotated and assigned to 4 classes, `own left`, `own right`, `other left`, and `other right`. In the project, the 4 classes are merged into one class --- `hand` so there is just one output label in the detection results.
 
@@ -89,11 +91,14 @@ This is a tradeoff of the Faster R-CNN model. Although the average precision is 
 This project is developed and maintained by Google. This project is a bit different than the other hand detection project as it uses two TensorFlow Object detection in TFLite format, one for [palm detection](https://github.com/google/mediapipe/blob/master/mediapipe/docs/hand_detection_mobile_gpu.md), and another one for hand landmark detection which visualizes the hand skeleton.
 
 The following is a brief hand detection process in the project.
+
 1. `palm_detection.tflite`, the palm detection model, is being used first. It defines a cropped image region of a hand.
 2. Then, `hand_landmark.tflite`, the hand landmark model, is being used to operate on the cropped image region and visualize the keypoints of a hand skeleton.
 
 This Hand Tracking project aims to detect only one hand. There is another [Multi-Hand Tracking](https://github.com/google/mediapipe/blob/master/mediapipe/docs/multi_hand_tracking_mobile_gpu.md) project performing multi-hand detection and tracking. The `hand_landmark_3d.tflite` supports visualizing hand landmarks in 3D.
 
-![Google-mediapipe-palm-detection-demo](https://lh3.googleusercontent.com/EMf52dPIm_73lYlvRvRDxFtOMZXxY6YvQcewpTcfFiisBofrWnsd2OMWC9gHGPp_e9-jLy1R1gX3=s250 "Google-mediapipe-palm-detection-demo") 	![Google-mediapipe-hand-tracking-gpu-demo](https://lh3.googleusercontent.com/KDScEy0ifWCZpaJ46-Wz0i7m5HuvmXOpIBotak4P85S-XGpPcJXIHMaNNFkSV7Tj0AUl1Uxxm_kZ=s250 "Google-mediapipe-hand-tracking-gpu-demo") ![Google-mediapipe-multi-hand-tracking-gpu-demo](https://lh3.googleusercontent.com/irS4YRqlzuxQgBocYQIdiYzIK7H94MfOkH84Th9o4Vo5hjmxpxxoGjf_oZkogaoqjV22QpyFtdp6=s250 "Google-mediapipe-multi-hand-tracking-gpu-demo") ![Google-mediapipe-hand-tracking-gpu-3D-demo](https://lh3.googleusercontent.com/WuhEfN3_sBJK5uCe_D046eqzufV1Re4a_yg_Sv-lEs__zB4wNO6f7CD657pas1c2o026eNTjy4uS=s250 "Google-mediapipe-hand-tracking-gpu-3D-demo")
+![Google-mediapipe-palm-detection-demo](https://lh3.googleusercontent.com/EMf52dPIm_73lYlvRvRDxFtOMZXxY6YvQcewpTcfFiisBofrWnsd2OMWC9gHGPp_e9-jLy1R1gX3=s250 "Google-mediapipe-palm-detection-demo"){width=42%} 	![Google-mediapipe-hand-tracking-gpu-demo](https://lh3.googleusercontent.com/KDScEy0ifWCZpaJ46-Wz0i7m5HuvmXOpIBotak4P85S-XGpPcJXIHMaNNFkSV7Tj0AUl1Uxxm_kZ=s250 "Google-mediapipe-hand-tracking-gpu-demo"){width=40%}
+
+![Google-mediapipe-multi-hand-tracking-gpu-demo](https://lh3.googleusercontent.com/irS4YRqlzuxQgBocYQIdiYzIK7H94MfOkH84Th9o4Vo5hjmxpxxoGjf_oZkogaoqjV22QpyFtdp6=s250 "Google-mediapipe-multi-hand-tracking-gpu-demo"){width=40%} ![Google-mediapipe-hand-tracking-gpu-3D-demo](https://lh3.googleusercontent.com/WuhEfN3_sBJK5uCe_D046eqzufV1Re4a_yg_Sv-lEs__zB4wNO6f7CD657pas1c2o026eNTjy4uS=s250 "Google-mediapipe-hand-tracking-gpu-3D-demo"){width=48%}
 
 The hand detection models in the project are custom models and trained from scratch. The palm detection model has an average precision of 95.7% [@google-ai-mp]. The hand landmark model is trained based on a dataset of around 30,000 real-world images and a number of synthetic hand images rendered by computers. All the images are annotated with 21 3D coordinates showing the keypoints of a hand skeleton. The hand landmark model can be used for gesture recognition based on the predicted hand skeleton.

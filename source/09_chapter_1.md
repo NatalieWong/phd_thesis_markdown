@@ -43,7 +43,9 @@ There is another issue regarding the current design of the “click” action. U
 
 ### Android Lantern - an Alternative to the Kinect Sensor and current Computer System
 
-![banner-lantern-internal](https://lh3.googleusercontent.com/3iPwZB9gchkw2s2yITK9BLdrBTrHS38ter2QOt-WZn9i2k80Q0EirODlOin8osvCSSshPWzQnJbk=s300 "banner-lantern-internal") ![banner-lantern-projection](https://lh3.googleusercontent.com/QGS5ZU5DCoCsjDu2ckgtxKGkwG9JGiGfwmjPQiiLPmLtgOSs-taNnomEUzCb3MIMn-3n8QgX-meU=s300 "banner-lantern-projection")
+![banner-lantern-internal](https://lh3.googleusercontent.com/3iPwZB9gchkw2s2yITK9BLdrBTrHS38ter2QOt-WZn9i2k80Q0EirODlOin8osvCSSshPWzQnJbk=s300 "banner-lantern-internal") 
+
+![banner-lantern-projection](https://lh3.googleusercontent.com/QGS5ZU5DCoCsjDu2ckgtxKGkwG9JGiGfwmjPQiiLPmLtgOSs-taNnomEUzCb3MIMn-3n8QgX-meU=s300 "banner-lantern-projection")
 
 Inspired by the [Android Things Lantern](https://github.com/nordprojects/lantern) developed by 	Nord Projects, the current Kinect sensor and the system could be replaced by the Android Lantern which can transform any surface into a projected user interface in the hope of enhancing the user experience by developing an Android application to improve to response time and make use of Computer Vision and Machine Learning to allow user interacting with the virtually projected graphics in a real-time manner.
 
