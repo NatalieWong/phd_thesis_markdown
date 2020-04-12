@@ -3,26 +3,26 @@
 ## Proposed Method
 ### State Diagram of the Android Lantern Interactive Information Wall
 
-![state machine diagram of lantern Info wall](http://www.plantuml.com/plantuml/png/jLBDIiD04BxlKmmvYkr5yD23b2BOWeeGRzR3aaoQnMIcPATMtzxT_7IRLaCGUajclfzlPcTkHLUoAmlbFWGXYdFUmv9BXAtUO0JQrd-gBitWqLWnj84RC8AbXRsH7CH8WHOuW-WPzpQwXkX15mLMtuvFAKJtk7Kk9P90B3hBO4KPLwKMmnIfdhKNW9NN3W5yJTMDym2SDUrZZTOy2BG5rJLcy9ApCCI5IT4wodHDiHiboS5L2Ry4jZL0Pu8Lt8B5X2crqvxDq5Gd8pG0trU7hz-76HBzOrEE8zeK9mjhYwCJzwNEWtTwwktg7IPtpLKqPp5nl-tpC2qrfIjAJQA5gpKzyIUch-p5bSSSm9tJ24u77U6pqCd7OYV2r6UsWGUOlXsOWJBAR4s-F48wB2pSuk3y7UpISOxESZXG0FPe8v_p53_QEmmNDFxrke5-ePtEaT9TMVm0)
+![State Machine Diagram of Lantern Information Wall](http://www.plantuml.com/plantuml/png/jLBDIiD04BxlKmmvYkr5yD23b2BOWeeGRzR3aaoQnMIcPATMtzxT_7IRLaCGUajclfzlPcTkHLUoAmlbFWGXYdFUmv9BXAtUO0JQrd-gBitWqLWnj84RC8AbXRsH7CH8WHOuW-WPzpQwXkX15mLMtuvFAKJtk7Kk9P90B3hBO4KPLwKMmnIfdhKNW9NN3W5yJTMDym2SDUrZZTOy2BG5rJLcy9ApCCI5IT4wodHDiHiboS5L2Ry4jZL0Pu8Lt8B5X2crqvxDq5Gd8pG0trU7hz-76HBzOrEE8zeK9mjhYwCJzwNEWtTwwktg7IPtpLKqPp5nl-tpC2qrfIjAJQA5gpKzyIUch-p5bSSSm9tJ24u77U6pqCd7OYV2r6UsWGUOlXsOWJBAR4s-F48wB2pSuk3y7UpISOxESZXG0FPe8v_p53_QEmmNDFxrke5-ePtEaT9TMVm0)
 
-After the Lantern is powered on, it launches the Android application and shows the Home page of the Information Wall. There is 3 items with the title "News", "Gallery" and "Department Staff Information".
+After the Lantern is powered on, it launches the Android application and shows the Home page of the Information Wall. There is 3 items with the title of "News", "Gallery" and "Department Staff Information".
 
 #### Workflow of Hand Detection Process for the Implementation of Interactive Feature
-![sequence diagram of workflow for interactive feature](http://www.plantuml.com/plantuml/png/XL91RW8n3Bpp2d-03_HGKQcgnA77tden6nSYPPF8Ta3yliu6Q4IeE129yNWyu_L655dB75OXfGoOS_0JgayHbWgv5S24Cp72-XK-qSUtIVtHwnbUh92rC056y3FkoRXOgwXqQJB4qOZrEbLt6vKuCzbhifdJH2AZPj_MursxmRtOUZHjXS8H3XWTE2DDIrecAK7bwdVK7Kr_RUiA0Y63SOu-5McgFhgwnCITHsFRlme4lR2aZMyx7kNlRF-OAkY1O4UYZzs3WT-HQKfiyYeGKlkMfl__5hl4O-rnQCTukezgR0f24DCORr5AkTc-kJAAiHLY2M5XZDC-6FSpHRMPSl8w7I2ta-W3tLY6Fui3DtALVqV57Ggrgs1FHre6WBF2_PGhkU5_lUlUv_MyUWL7eyRefItMImvu7hgVvBJc1QFeLksjluqzPGw_)
+![Sequence Diagram of Workflow for Interactive Feature](http://www.plantuml.com/plantuml/png/XL91RW8n3Bpp2d-03_HGKQcgnA77tden6nSYPPF8Ta3yliu6Q4IeE129yNWyu_L655dB75OXfGoOS_0JgayHbWgv5S24Cp72-XK-qSUtIVtHwnbUh92rC056y3FkoRXOgwXqQJB4qOZrEbLt6vKuCzbhifdJH2AZPj_MursxmRtOUZHjXS8H3XWTE2DDIrecAK7bwdVK7Kr_RUiA0Y63SOu-5McgFhgwnCITHsFRlme4lR2aZMyx7kNlRF-OAkY1O4UYZzs3WT-HQKfiyYeGKlkMfl__5hl4O-rnQCTukezgR0f24DCORr5AkTc-kJAAiHLY2M5XZDC-6FSpHRMPSl8w7I2ta-W3tLY6Fui3DtALVqV57Ggrgs1FHre6WBF2_PGhkU5_lUlUv_MyUWL7eyRefItMImvu7hgVvBJc1QFeLksjluqzPGw_)
 
 The camera module keeps capturing image. For each image captured, the MainActivity passes it to an Interpreter for hand detection.
 
-A hand detection ML model is trained to recognize a hand. The interpreter utilizes the model to conduct the inference in each image and returns the detection results to the MainActivity after the inference process completes. If there is more than one results, the MainActivity selects the best result and record its location on projected area.
+A hand detection ML model is trained to recognize a hand. The interpreter utilizes the model to conduct the inference in each image and returns the detection results to the MainActivity after the inference process completes. If there is more than one results, the MainActivity selects the best result and records the result's location on the projected area.
 
-When a user's hand moves into the projected area of the Lantern, a hand indicator is shown on the UI which visualizes the location of the hand on the projected area for the user to navigate the pages in the Android application. When the user's hand moves away from the projected area of the Lantern, the hand indicator disappeared.
+When a user's hand moves into the projected area of the Lantern, a hand indicator is shown on the UI which visualizes the location of the hand on the projected area for the user to navigate the pages in the Android application. When the user's hand moves away from the projected area of the Lantern, the hand indicator disappears.
 
-To trigger a "click" action, the user first controls the hand indicator by waving his/her hand, then moves the hand indicator to the desired location on the UI and finally moves away his/her hand from the projected area of the Lantern. The "click" action is triggered based on last position where the hand indicator appeared on the UI.
+To trigger a "click" event, the user first controls the hand indicator by waving his/her hand, then moves the hand indicator to the desired position on the UI and finally moves away his/her hand from the projected area of the Lantern. The "click" event is triggered based on last position where the hand indicator appeared on the UI.
 
-In the Home page, if the last position of the hand indicator was shown on the News item, the News item is clicked and the Android application navigates to the News landing page where there are 3 titles of the news articles shown on the page. An item of the news articles is clicked if the last position of the hand indicator was shown on it, bringing user to the details page of the selected news article. The user can navigate up to the previous page or Home page by moving the hand indicator to the "Back" button or the "Go Home" button on the top navigation bar. This "clicking" and navigation processes is also applied to the pages of Department Staff Information.
+In the Home page, if the last position of the hand indicator was shown on the News item, the News item is clicked and the Android application navigates to the News landing page where there are 3 titles of the news articles shown on the page. An item of the news articles is clicked if the last position of the hand indicator was shown on it, bringing user to the details page of the selected news article. The user can navigate up to the previous page or Home page by moving the hand indicator to the "Back" button or the "Go Home" button on the top navigation bar. This "clicking" and navigation processes are also applied to the pages of Department Staff Information.
 
-The Gallery is a page for photo slideshow only. There are a total of 6 photos and each of them stays on the UI for 6 seconds before it is switched to another photo. User can "click" on the "Back" button or the "Go Home" button to return to the Home page.
+The Gallery is a page for photo slideshow only. There are a total of 6 photos and each of them stays on the UI for 6 seconds before it is switched to another photo. User can "click" on the "Back" button or "Go Home" button to return to the Home page.
 
-Google Cloud Firestore is used to be the database of the Android application storing all the data of the New, Gallery and the Department Staff Information pages. It is a NoSQL database where data is called document and referenced using a path. It also provides an API that can be used in the Android application to retrieve data with ease.
+Google Cloud Firestore is being used to be the database of the Android application storing all the data of the New, Gallery and the Department Staff Information pages. It is a NoSQL database where data is called document and referenced using a path. It also provides API that could be used in the Android application to retrieve data with ease.
 
 ## Implementation
 ### User Interface of Android application
@@ -30,7 +30,7 @@ Google Cloud Firestore is used to be the database of the Android application sto
 
 The News page, Gallery page, Department Staff Information page and their inner pages exist as fragments in the Android application. Figure 3.3 shows a graphical version of the navigation graph in `mobile_navigation.xml`.
 
-![Navigation Graph](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600)
+![Navigation Graph of Fragments](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600)
 
 In `activity_main.xml`, all the layout of the fragments defined in `mobile_navigation.xml` will be connected to the fragment layout below so that user can navigate around the Android application to view different pages.
 ```xml
@@ -41,7 +41,7 @@ In `activity_main.xml`, all the layout of the fragments defined in `mobile_navig
     app:defaultNavHost="true"
     app:navGraph="@navigation/mobile_navigation" />
 ```
-Using fragments allows easy implementation of navigation in the Android application. In `mobile_navigation.xml`, I can add an `action` tag to link up two fragments. Here is the example showing that the home fragment is linked up with the New, Gallery as well as the Department Staff Information pages' fragments.
+The use of fragments allows easy implementation of navigation in the Android application. In `mobile_navigation.xml`, I can add an `action` tag to link up two fragments. Here is an example showing that the home fragment is linked up with the New, Gallery as well as the Department Staff Information pages' fragments.
 ```xml
 <fragment
   android:id="@+id/nav_home"
@@ -62,7 +62,7 @@ In `MainActivity.kt`, calling
 ```kotlin
 findNavController(R.id.nav_host_fragment).navigate(R.id.nav_news)
 ```
-will bring the user to the News page's fragment and calling
+will bring the user to the News page's fragment, and calling
 ```kotlin
 findNavController(R.id.nav_host_fragment).navigateUp()
 ```
@@ -278,6 +278,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 	The images are separated into two folders, one for model training and another one for model evaluation. In each image folder, there is a CSV file which contains all the essential information about the images under the folder, the coordinates of the hand(s) in each image and the class label - `hand`.
 	
 	In `train_labels.csv`,
+
 	```
 	filename,width,height,class,xmin,ymin,xmax,ymax
 	CHESS_COURTYARD_BT_frame1038.jpg,1280,720,hand,771,638,1031,718
@@ -302,6 +303,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 	- Set the `input_path:` under the `train_input_reader:` and `eval_input_reader:` sections to the location of TFRecord files for model training and evaluation respectively.
 	- Set the `label_map_path:` to the location of a label map in `.pbtxt` format.
 	I have created a `hands_label_map.pbtxt` for the hand detection model training process.
+	
 		```
 		item {
 			id: 1
@@ -309,7 +311,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 		}
 		```
 
-	To start training a hand detection model, I have run the `object_detection/model_main.py`, or `object_detection/legacy/train.py` plus `object_detection/legacy/eval.py` under the [TensorFlow models' object detection repository](https://github.com/tensorflow/models/tree/master/research). The `model_main.py` is the newer Python script for training of object detection model. This program enables the model training and evaluation to be done at the same time. In another words, the training of model starts first, then after a certain period of time, the training process is stop and evaluation of the model starts. After the evaluation is done, the training process starts again. The training and evaluation processes are done alternatively throughout until the final step of the model training is reached. If legacies are used for the hand detection model training, I have to run the `train.py` first, following by the `eval.py` so as to achieve training and evaluating the model at the same time.
+	To start training a hand detection model, I have run the `object_detection/model_main.py`, or `object_detection/legacy/train.py` plus `object_detection/legacy/eval.py` under the [TensorFlow models' object detection repository](https://github.com/tensorflow/models/tree/master/research). The `model_main.py` is the newer Python script for training of object detection model. This program enables the model training and evaluation to be done at the same time. In another words, the training of model starts first, then after a certain period of time, the training process is stopped and evaluation of the model starts. After the evaluation is done, the training process starts again. The training and evaluation processes are done alternatively throughout until the final step of the model training is reached. If legacies are used for the hand detection model training, I have to run the `train.py` first, following by the `eval.py` so as to achieve training and evaluating the model at the same time.
 
 After the training process finished, I have to export the final model checkpoint file to an inference graph by running `object_detection/export_tflite_ssd_graph.py` and `tflite_graph.pb` and `tflite_graph.pbtxt` are generated. The frozen inference graph is then converted into TFLite format by using the command `tflite_convert`.
 ```
@@ -337,26 +339,32 @@ I have first tried using the hand dataset prepared by University of Oxford to tr
 In Loïc Marie's Hands Detection project, the [`create_inputs_from_dataset.py`](https://github.com/loicmarie/hands-detection/blob/master/create_inputs_from_dataset.py) helps me to download the dataset from the website, read the hand annotation files in `.mat` format and generate TFRecord files. I have used the `hands_train.record` and `hands_val.record` for my hand detection model training. I have chosen the SSD MobileNet V1 pre-trained model and started the training by running the `object_detection/model_main.py`
 
 ***Errors encountered:***
+
 I first started the model training process in a Docker machine installed on Macbook Pro through VirtualBox. 
 The target number of training steps is 6,000 and Python 2.7 was used to execute the Python script. The training was started without any error, however, during the model evaluation, I found that the detection precision was always zero. VirtualBox is a software used for virtualization, hence making the Docker container becoming a virtual machine instead. As hardware is virtualized under virtual machines, I believed that there were some problems or errors occurred during the accessing of the computer’s hardware resources.
 
 After I had started the training using Python 3.6 on Macbook Pro, the `TypeError: object of type <class 'numpy.float64'> cannot be safely interpreted as an integer` occurred. I suspected that this is caused by a few problems.
 - The arithmetic operation of division is different between Python 2 and Python 3.
 	In Python 2, the division operation discards the decimal places and result is in the type of `int`.
+
 	```python
 	1 / 200
 	# The result is 0.
 	```
+
 	In Python 3, the result division operation is in the type of `float`.
+
 	```python
 	1 / 200
 	# The result is 0.005.
 	```
+
 	As I was using `Python3.6` to run the model training Python script, this error occurred.
 - The `numpy` version being used. I have installed the latest `numpy` version (1.18.0), however, the float64 is not supported starting from `numpy` version 1.12.0.
 - TensorFlow Lite operations target at float32 for floating-point inference but perhaps `numpy.float64` had been used to generate TFRecord files.
 
 Besides the problems that different versions of libraries and dependencies are being used, I have discovered some problems regarding the quality of images in this hand dataset.
+
 - Hands in the images are quite small which cannot be seen clearly.
 -  Images vary in size. The dimensions of the images are any combination ranging from 90 x 100 to 1280 x 1024 pixels.
 - The resolution of most of images that are used for training are low. Many of them have dimensions below 500 x 500 pixels.
@@ -370,6 +378,7 @@ Besides the problems that different versions of libraries and dependencies are b
 
 #### Success in Using EgoHands dataset for Hand Detection Model Training
 From [Victor Dibia's hand detector project](https://github.com/victordibia/handtracking), I learned about the EgoHands dataset prepared by Indiana University. This dataset has 4,401 images for model training and 401 images for model evaluation and I found that this dataset is in high quality.
+
 - Hands in the images are big and can be seen clearly. This is because all the images are captured from an egocentric view by Google Glasses.
 - All images are in the same size of 1280 x 720 pixels, the HD standard format.
 
@@ -377,6 +386,7 @@ From [Victor Dibia's hand detector project](https://github.com/victordibia/handt
 ![EgoHands-quality-dataset-3](https://lh3.googleusercontent.com/OuY8WWsjIresqMU2k0L-8xsSNVWE-MD54Wa-OUkh_g9axQqVl7zYAmz7Mt7RfszE6u8yKdSirMEq=s320 "EgoHands-quality-dataset-3"){width=50%} ![EgoHands-quality-dataset-4](https://lh3.googleusercontent.com/FVn0v8iAU79kOmbIk7E5kiS-D5q5pIZa6a9NzzWFIaX83imNooDa-EqF_G7GypHSsbbXibq1eemV=s320 "EgoHands-quality-dataset-4"){width=50%}
 
 The [`egohands_dataset_clean.py`](https://github.com/victordibia/handtracking/blob/master/egohands_dataset_clean.py) provided in Victor Dibia's hand detector project helps me to download the dataset from the website, clean the files in the dataset and generate two CSV files, `train_labels.csv` and `test_labels.csv`. The cleaning process includes
+
 - reading the `polygons.mat` files which contains the annotations of the hand bounding boxes in all the images,
 - renaming all the filename of the images to make sure each filename is unique, and
 - spliting the dataset, i.e. images, into two folders, around 83% for training and  10% for testing.

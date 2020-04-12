@@ -83,6 +83,8 @@ The model trained based on my own dataset:
 
 ![TensorBoard-v2-100k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/j3xkeDb8CCjjXpOIz_tuDUvzoIt1iZb-CiZRTNcp9w_xOuyvTU4tmF0BqoQUtDFGCLi78XF0awI1=s300 "TensorBoard-v2-100k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-v2-100k-Losses](https://lh3.googleusercontent.com/oFu5vcXGnllQMMf5DdD3_9QUTvFPsAqjvlDRvO7Qsr4Ud0XBr3V85DvTp0YKQk-g3p2P7RcfFjOs=s300 "TensorBoard-v2-100k-Losses"){width=50%}
 
+\newpage
+
 ***Model trained based on my own dataset with 50,000 steps***
 
 ![TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision](https://lh3.googleusercontent.com/lvAtkjAL0PjtYvIuP1qnjzlJukQzxYqvPeXytE_tiXP96_cU639eCr7Q0XI29ZdDKt-N0Fklnr8m=s300 "TensorBoard-mydataset-v2-50k-DetectionBoxes_Precision"){width=50%} ![TensorBoard-mydataset-v2-50k-Losses](https://lh3.googleusercontent.com/Phtcs-p35q2cM8zXq2AN8pLp2qk9GhvSIGDGBhWkmmCbeRluSI3SrEdW11hTU49rGzWjNyx6VAyr=s300 "TensorBoard-mydataset-v2-50k-Losses"){width=50%}
@@ -124,6 +126,8 @@ The combination of a pre-trained model and the Python script(s) used for the tra
 
 ### Conclusion of the Hand Detection Models' Performance
 Among all the hand detection models that I have trained so far, the best hand detection model is trained using the EgoHands dataset prepared by Indiana University and the quantized SSD MobileNet V2 pre-trained model. The following graphs compare the hand detection confidence among the best 2 hand detection models re-trained from quantized SSD MobileNet V1/V2 with 50,000 and 100,000 steps respectively using EgoHands dataset as well as the model re-trained from quantized SSD MobileNet V2 with 50,000 steps using my own dataset.
+
+\newpage
 
 ***Comparison of hand detection confidence running on the smartphone***
 
