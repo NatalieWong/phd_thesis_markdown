@@ -16,3 +16,7 @@ For the hand detection model, I have mastered the training process of an object 
 The hand detection model in TFLite format is added to the Android application to perform inference on the images captured by the camera module. A "clicking" action can be triggered by a custom MotionEvent based on the location of a hand detected in each image.
 
 The user interface of the Interactive Information Wall is revised. Three kinds of information --- News, Gallery and Department Staff Information are shown on the Wall. In the Android application, fragments are used to enable easy navigation in the hierarchy and data binding with MVVM architecture as well as observable data objects are used to achieve real-time updates on the UI components' data fields and manageable Android application in which UI's logic and program's logic are decoupled.
+
+<!-- \appendix -->
+\setcounter{chapter}{1}
+\renewcommand{\thechapter}{A\arabic{chapter}}

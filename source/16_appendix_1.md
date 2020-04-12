@@ -10,16 +10,16 @@ During the execution of the program, you have to choose whether you would like t
 
 Please refer to the [GitHub repository](https://github.com/NatalieWong/HandDetection) for more details about the source code.
 
-### Environment
+## Environment
 This program has been successfully run using Python 2.7.
 
-### Dependencies
+## Dependencies
 Remember to `pip install cv2 numpy csv pandas scikit-learn` to get all the dependencies ready before the execution of the program.
 
-### Label for TensorFlow Object Detection model
+## Label for TensorFlow Object Detection model
 Currently only one label - `hand` is supported. See the line `rowdata = [filename, final_w, final_h, 'hand', xmin, ymin, xmax, ymax]`
 
-#### Structure of files and directories created after the execution of the programs
+### Structure of files and directories created after the execution of the programs
 ```
     hand_images/ --> holding all the images to be split into
 					 training/testing images
@@ -46,9 +46,9 @@ Currently only one label - `hand` is supported. See the line `rowdata = [filenam
          --- hand_train.record
 ```
 
-### Essential Operations
+## Essential Operations
 
-#### Run `python HandDetection.py`, the main program
+### Run `python HandDetection.py`, the main program
 This program detects hand in frames from a video source using OpenCV. If a hand is detected in a frame, the frame can be saved in JPEG format under the `image` directory and the coordinates of the bounding box for the hand in the frame will be recorded. After the detection of hand in the video frames finished, a csv file `hand_label.csv` will be generated.
 
 Please change `?.mp4` in the line `hand_detector = HandDetector('resources/?.mp4')` to your video file in MP4 format. You are advised to put all the video sources under the resources directory.
@@ -63,18 +63,18 @@ You may change the variable `self.image_dir` to create another directory with a 
 
 You may change the variable `self.csvFilename` to create another csv file for recording all the information about the image and the coordinates of the bounding box indicating the position of a hand in the image. The default name of the csv file is `hand_label.csv`.
 
-#### Run `python split_train_test_csv_images.py` afterwards
+### Run `python split_train_test_csv_images.py` afterwards
 This program splits the images in the `image` directory into 2 separated directories and corresponding image data in the `hand_label.csv` csv file into 2 separated csv files. By default a dataset directory called `hand_my_dataset` will be created. Under this dataset directory, there are two subdirectories. `hand_train` is intended to be used for training while `hand_test` is intended to be used for testing during the hand detection model training process.
 
 ***Customize the program***
 
 You may change the names of the images, training, testing directories and the csv files by modifying the variables located at the beginning of the program.
 
-#### Run `python generate_tfrecord.py` at last
+### Run `python generate_tfrecord.py` at last
 This program generates a TFRecord file either based on the train or test csv file, i.e. `hand_train_labels.csv` or `hand_test_labels.csv`.
 
 Run the program twice to generate 2 TFRecord files, one for training and another one for testing. Change the name of the files and directories by modifying values of the variables located at the beginning of the program.
 
 
-### Optional Operation
+## Optional Operation
 Run `visualize_image_bbox.py` seperately to visualize the bounding box for each image saved under the `image`, `hand_train` and `hand_test` directories.
