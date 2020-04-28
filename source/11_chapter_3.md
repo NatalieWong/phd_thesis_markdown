@@ -277,7 +277,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 
 	For each image, the locations of hands are annotated. For each location of a hand, there are two coordinates associated with it, which are the minimum value of the x axis and the maximum value of the y axis (`xmin`, `ymax`) as well as the maximum value of the x axis and the minimum value of the y axis (`xmax`, `ymin`).
 	
-	All the images in the dataset are of the same size with the image that is going to be recognized by the model. In this project, the Raspberry Pi camera module captures images with a size of 1280 x 720 so the size of the images in the dataset are also 1280 x 720.
+	All the images in the dataset are of the same dimension with the image that is going to be recognized by the model. In this project, the Raspberry Pi camera module captures images with a dimension of 1280 x 720 so the dimension of the images in the dataset are also 1280 x 720.
 	
 	The images are separated into two folders, one for model training and another one for model evaluation. In each image folder, there is a CSV file which contains all the essential information about the images under the folder, the coordinates of the hand(s) in each image and the class label - `hand`.
 	
@@ -317,7 +317,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 
 	To start training a hand detection model, I have run the `object_detection/model_main.py`, or `object_detection/legacy/train.py` plus `object_detection/legacy/eval.py` under the [TensorFlow models' object detection repository](https://github.com/tensorflow/models/tree/master/research). The `model_main.py` is the newer Python script for training of object detection model. This program enables the model training and evaluation to be done at the same time. In another words, the training of model starts first, then after a certain period of time, the training process is stopped and evaluation of the model starts. After the evaluation is done, the training process starts again. The training and evaluation processes are done alternatively throughout until the final step of the model training is reached. If legacies are used for the hand detection model training, I have to run the `train.py` first, following by the `eval.py` so as to achieve training and evaluating the model at the same time.
 
-After the training process has finished, I have to export the final model checkpoint file to an inference graph by running `object_detection/export_tflite_ssd_graph.py` and `tflite_graph.pb` and `tflite_graph.pbtxt` are generated. The frozen inference graph is then converted into TFLite format by using the command `tflite_convert`.
+After the training process has finished, I have to export the final model checkpoint file to an inference graph by running `object_detection/export_tflite_ssd_graph.py`. Then, `tflite_graph.pb` and `tflite_graph.pbtxt` are generated. The frozen inference graph is then converted into TFLite format by using the command `tflite_convert`.
 ```
 tflite_convert \
 --output_file=".../hand_detect.tflite" \
@@ -351,11 +351,13 @@ After I had started the training using Python 3.6 on Macbook Pro, the `TypeError
 
 - The arithmetic operation of division is different between Python 2 and Python 3.
 	In Python 2, the division operation discards the decimal places and result is in the type of `int`.
+
 	```
 	1 / 200
 	# The result is 0.
 	```
 	In Python 3, the result division operation is in the type of `float`.
+
 	```
 	1 / 200
 	# The result is 0.005.
@@ -381,7 +383,7 @@ Besides the problems that different versions of libraries and dependencies are b
 From [Victor Dibia's hand detector project](https://github.com/victordibia/handtracking), I learned about the EgoHands dataset prepared by Indiana University. This dataset has 4,401 images for model training and 401 images for model evaluation and I found that this dataset is in high quality.
 
 - Hands in the images are big and can be seen clearly. This is because all the images are captured from an egocentric view by Google Glasses.
-- All images are in the same size of 1280 x 720 pixels, the HD standard format.
+- All images are in the same dimension of 1280 x 720, the HD standard format.
 
 ![EgoHands-quality-dataset-1](https://lh3.googleusercontent.com/r1I0TOX_vbdwXcjAw_PXHrdqKQFyhFU3WMH_o72d9Xm7r7U5WeNxy466DGLTiKDyn6CkxYrzHhNa=s320 "EgoHands-quality-dataset-1"){width=50%} ![EgoHands-quality-dataset-2](https://lh3.googleusercontent.com/fKnsXQsTx2siqzTo5pjWJU0_RIc9c613imPUulyDTpSoIKbP1E3uj6yx47UgaieYspSnVIRUl-N0=s320 "EgoHands-quality-dataset-2"){width=50%}
 ![EgoHands-quality-dataset-3](https://lh3.googleusercontent.com/OuY8WWsjIresqMU2k0L-8xsSNVWE-MD54Wa-OUkh_g9axQqVl7zYAmz7Mt7RfszE6u8yKdSirMEq=s320 "EgoHands-quality-dataset-3"){width=50%} ![EgoHands-quality-dataset-4](https://lh3.googleusercontent.com/FVn0v8iAU79kOmbIk7E5kiS-D5q5pIZa6a9NzzWFIaX83imNooDa-EqF_G7GypHSsbbXibq1eemV=s320 "EgoHands-quality-dataset-4"){width=50%}
@@ -488,7 +490,7 @@ camera.startPreview()
 ```
 
 #### Essential Procedures for Processing an Image to Detect a Hand
-As the hand detection model can only accept an image bitmap with a size of 300 x 300 while the image captured from the camera module has a size of 1820 x 720, I have to create a matrix `frameToCropTransform` which shrinks the original size of the image to fit the one required by the hand detection model using a utility method `getTransformationMatrix` provided by the [`ImageUtils.java` class](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/env/ImageUtils.java) in the demo project.
+As the hand detection model can only accept an image bitmap with a dimension of 300 x 300 while the image captured from the camera module has a dimension of 1820 x 720, I have to create a matrix `frameToCropTransform` which shrinks the original size of the image to fit the one required by the hand detection model using a utility method `getTransformationMatrix` provided by the [`ImageUtils.java` class](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/env/ImageUtils.java) in the demo project.
 ```kotlin
 private val IMAGE_WIDTH = 1280
 private val IMAGE_HEIGHT = 720
@@ -523,7 +525,7 @@ private fun processImage() {
 	...
 }
 ```
-After a bitmap in RGB format is prepared, I have used the [`Classifier.java`](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/Classifier.java) and [`TFLiteObjectDetectionAPIModel.java`](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/TFLiteObjectDetectionAPIModel.java) class provided by the demo project for hand detection. `recognizeImage()` is the only method that I need to detect a hand in the image. This method accepts a bitmap with a size of 300 x 300 and returns a list of `Classifier.Recognition` objects if hands are detected in the image.
+After a bitmap in RGB format is prepared, I have used the [`Classifier.java`](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/Classifier.java) and [`TFLiteObjectDetectionAPIModel.java`](https://github.com/tensorflow/examples/blob/master/lite/examples/object_detection/android/app/src/main/java/org/tensorflow/lite/examples/detection/tflite/TFLiteObjectDetectionAPIModel.java) class provided by the demo project for hand detection. `recognizeImage()` is the only method that I need to detect a hand in the image. This method accepts a bitmap with a dimension of 300 x 300 and returns a list of `Classifier.Recognition` objects if hands are detected in the image.
 ```kotlin
 private var detector: Classifier? = null
 
@@ -535,7 +537,7 @@ private val croppedBitmap = Bitmap
 private fun processImage() {
 	...
 	// Prepare a cropped Bitmap of an image
-	// with a size of 300 * 300
+	// with a dimension of 300 * 300
 	val canvas = Canvas(croppedBitmap)
     canvas.drawBitmap(rgbFrameBitmap, frameToCropTransform,
 	    Paint())
@@ -590,7 +592,7 @@ The method `getLocation()` (written in `.location` for Kotlin) returned a `RectF
 
 ![LanternInfoWall-hand-indicator](https://lh3.googleusercontent.com/SfzR2rlxlDGYxEt1NnaaGlHl1PyT3B_aWul2D-cR8gj48kU0WKqGtlYCzIkeLGv3SY66ixJm0VF2=s600 "LanternInfoWall-hand-indicator") \
 
-Since the image is has been resized to 300 x 300 for hand detection, I have to resize the image back to its original size of 1820 x 720 by calling the `invert()` method of the `Matrix` class. Similarly, the center x and y coordinates of the `RectF` object have to be transformed so that the location of the hand can be correctly shown on the UI. This can be done by calling the `mapRect()` method of the `Matrix` class.
+Since the image is has been resized to 300 x 300 for hand detection, I have to resize the image back to its original dimension of 1820 x 720 by calling the `invert()` method of the `Matrix` class. Similarly, the center x and y coordinates of the `RectF` object have to be transformed so that the location of the hand can be correctly shown on the UI. This can be done by calling the `mapRect()` method of the `Matrix` class.
 ```kotlin
 frameToCropTransform.invert(cropToFrameTransform)
 ...
@@ -664,8 +666,6 @@ For the Egohands dataset, the gestures captured in most of the images do not exa
 
 With these gestures, a few fingers disappear from the first person view and fingers are curled inward. It turns out that a gesture that is holding something in the hand has a higher confidence, i.e. easier to be detected as hand. However, images with gestures of clicking something are what I am looking for as I want to train a hand detection model to enable the user clicking the virtually projected graphics on the wall. Therefore, I decided to collect images of open hands with either index fingers or all fingers pointing upward.
 
-<br>
-
 ***Get Rid of  Manual Annotation of Hands by using OpenCV API for Hand Detection in Video Frames***
 
 At present, we have to manually annotate the hands in each image by using image annotation tools like [LabelImg](https://github.com/tzutalin/labelImg) and this is time consuming.
@@ -720,7 +720,7 @@ def add_hand2(self, frame, roi = None):
         ...
         self.save_frame(frame, xmin, ymin, xmax, ymax)
 ```
-The size of each frame should be the same of the one captured by the Raspberry Pi camera module which is 1280 x 720. If the frame size of the input video is not in 1280 x 720, I have to resize the frame using the `resize()` function provided by the OpenCV Python library as well as re-calculate the coordinates of the annotation.
+The dimension of each frame should be the same of the one captured by the Raspberry Pi camera module which is 1280 x 720. If the frame dimension of the input video is not in 1280 x 720, I have to resize the frame using the `resize()` function provided by the OpenCV Python library as well as re-calculate the coordinates of the annotation.
 ```python
 def save_frame(self, frame, xmin, ymin, xmax, ymax):
 	...

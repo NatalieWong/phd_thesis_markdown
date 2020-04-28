@@ -30,12 +30,12 @@ Currently only one label - `hand` is supported. See the line `rowdata = [filenam
     hand_my_dataset/
         |
         |--- hand_test/
-        |   L hand_test_labels.csv
-        |   L all the images for testing
+        |   |--- hand_test_labels.csv
+        |   |--- all the images for testing
         |
         |--- hand_train/
-        |   L hand_train_labels.csv
-        |   L all the images for training
+        |   |--- hand_train_labels.csv
+        |   |--- all the images for training
         |
         |--- hand_eval.record
         |--- hand_train.record

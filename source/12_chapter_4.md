@@ -98,7 +98,7 @@ In general, the mAP value rose and the value of the total loss fell throughout t
 For the model trained with 100,000 steps based on EgoHands dataset, the mAP value surged to 0.6 at step 20,000 and started to level off at step 50,000. On the other hand, for the model trained with 50,000 steps based on my own dataset, the mAP value only climbed to 0.3 at step 20,000 and reached 0.65 at the end of the training process. It seems that the model trained with 100,000 steps based on EgoHands dataset is better than the one trained with 50,000 steps based on my own dataset.
 
 #### Performance of inference on Raspberry Pi 3 B+ Model through Android application
-The following chart shows the confidence of hand detection results (in %) corresponding to the models' total number of training steps. The 2 models were trained based on the EgoHands dataset.
+The following chart shows the relationship between the confidence of hand detection results (in %) and the models' total number of training steps. The 2 models were trained based on the EgoHands dataset.
 
 ![rpi3-v2-confidence](https://lh3.googleusercontent.com/zeCXQhkup5DCvWRXA5Jet5VeLAUV2ngtU0RXUL30et6DLIg1LFBdFXkOAoGuGOIDwYIZb9P76vkz=s600 "rpi3-v2-confidence") \
 

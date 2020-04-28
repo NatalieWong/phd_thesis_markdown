@@ -67,6 +67,8 @@ The ready-to-use API provided by ML Kit hinders variations during on-device infe
 
 The existing ODT model can only classify objects into 5 coarse categories which are `FASHION_GOOD`, `FOOD`, `HOME_GOOD`, `PLACE`, `PLANT` and `UNKNOWN`. Therefore, I cannot directly apply this model for hand detection. I have to train a custom hand detection model by myself using TensorFlow Object Detection API.
 
+\newpage
+
 ### Hand Detection Models trained using TensorFlow Object Detection API
 [**Real-time Hand Detector using Neural Networks (SSD) on Tensorflow**](https://github.com/victordibia/handtracking) [@victor-hand-detection] by Victor Dibia
 

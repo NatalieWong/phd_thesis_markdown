@@ -84,9 +84,9 @@ mesh?.let {
 	it.setIndices(indices)
 }
 ```
-The image format conversion utilizing the libGDX should be continuously running at the background along with the hand detection routines in the MainActicity which is a class extended from the AppCompatActivity. Unfortunately, the current AndroidApplication class provided by the libGDX is not fully compatible with AppCompatActivity, thus my MainActivity class cannot be extended from the AndroidApplication.
+The image format conversion utilizing the libGDX should be continuously running at the background along with the hand detection routines in the `MainActicity` which is a class extended from the `AppCompatActivity`. Unfortunately, the current `AndroidApplication` class provided by the libGDX is not fully compatible with `AppCompatActivity`, thus my MainActivity class cannot be extended from the `AndroidApplication`.
 
-A possible solution is to revise the implementation of the AndroidApplication class making it compatible with AppCompatActivity, then compile the whole libGDX project as a `.jar` file and add it to my Android application project.
+A possible solution is to revise the implementation of the `AndroidApplication` class making it compatible with `AppCompatActivity`, then compile the whole libGDX project as a `.jar` file and add it to my Android application project.
 
 #### Coral USB Accelerator for Hand Detection Model Inferencing
 Coral USB Accelerator is an on-board Edge TPU co-processor designed to significantly accelerate the model inferencing in a power efficient manner on small and low-power devices like smartphones and Raspberry Pi.
@@ -98,10 +98,10 @@ The co-processor is able to perform 4 trillion operations per second. The follow
 | SSD MobileNet V1 | 109 | 6.5 |
 | SSD MobileNet V2 | 106 | 7.2 |
 > Remarks:
-
-	- Time is measured in milliseconds per inference.
-	- The models have an input tensor size of 224 x 224
-	- *Desktop CPU: Single Intel® Xeon® Gold 6154 Processor @ 3.00GHz
+>
+>	- Time is measured in milliseconds per inference.
+>	- The models have an input tensor size of 224 x 224
+>	- *Desktop CPU: Single Intel® Xeon® Gold 6154 Processor @ 3.00GHz
 
 I would like to use the Accelerator in order to improve the speed for the hand detection model inferencing on Raspberry Pi 3. Nevertheless, the current API of the Accelerator only supports running a model inferencing using Python script. I have to write a program acting as an adapter so that I am able to use the Accelerator in Android application.
 
