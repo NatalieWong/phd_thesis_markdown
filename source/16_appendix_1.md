@@ -1,4 +1,4 @@
-# Appendix 1: User Guide of Auto CSV and TFRecord files Generator for TensorFlow Hand Detection Model Training {.unnumbered}
+# Appendix 1: User Guide of Auto Hand Dataset Generator {.unnumbered}
 
 <!-- 
 This could be a list of papers by the author for example 
@@ -30,20 +30,15 @@ Currently only one label - `hand` is supported. See the line `rowdata = [filenam
     hand_my_dataset/
         |
         |--- hand_test/
-        |   |
-        |    --- hand_test_labels.csv
-        |   |
-        |    --- all the images for testing
+        |   L hand_test_labels.csv
+        |   L all the images for testing
         |
-        | --- hand_train/
-        |   |
-        |    --- hand_train_labels.csv
-        |   |
-        |    --- all the images for training
+        |--- hand_train/
+        |   L hand_train_labels.csv
+        |   L all the images for training
         |
-         --- hand_eval.record
-        |
-         --- hand_train.record
+        |--- hand_eval.record
+        |--- hand_train.record
 ```
 
 ## Essential Operations

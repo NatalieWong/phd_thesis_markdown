@@ -2,7 +2,7 @@
 
 ## Limitations
 ### Dependency on Color Features for Hand Detection Model
-Reviewing the problems of the hand detection models that I have trained, I discovered that other objects which have similar color to skin would be misclassified as hand. This shows that the hand detection models rely heavily on color features to detect a hand.
+After reviewing the problems of the hand detection models that I have trained, I discovered that other objects which have similar color to skin would be misclassified as hand. This shows that the hand detection models rely heavily on color features to detect a hand.
 
 For the image annotation of hands in EgoHands dataset, apart from labeling the whole part of a hand, any part of a hand, like a finger, which could be seen manually in an image was also annotated. (The green non-filled rectangle is the bounding box of the hand.)
 
@@ -32,7 +32,7 @@ As white light beams produced by the projector are projected on the hand, it mak
 By changing the background color of the UI to black, white light beams can be eliminated. The skin color of a hand being captured by the camera module is retained, allowing a hand to be detected smoothly across the frames in the preview view.
 
 ### Single Hand Detection in Android application
-At present, only the best hand result is selected among the detection results and one hand position indicator, i.e. a red dot, is drawn on the UI based on the location of the best result.
+At present, only the best hand result is selected among the detection results, therefore, only one hand position indicator, i.e. a red dot, is drawn on the UI based on the location of the best result.
 
 ### Latency for Hand Detection on Raspberry Pi
 Although I have switched to use Android OS on Raspberry Pi and deployed the best hand detection model re-trained form SSD MobileNet V2 model in the Android application running on the Raspberry Pi, the one-second delay of the hand detection process still persists while I am running the Android application. I doubt that this is another problem raised due to the weaker computational power of the Raspberry Pi.
@@ -42,7 +42,7 @@ Although I have switched to use Android OS on Raspberry Pi and deployed the best
 #### Using libGDX API to improve the speed for the conversion of image format from YUV to RGB
 Currently the image format captured from the preview view is in YUV format, however, the TensorFlow Object Detection API can only support inference on images in RGB format. The conversion of image format from YUV to RGB is now done by `convertYUV420SPToARGB8888()` which can only be executed on the CPU.
 
-The idea of the enhancement is to load the Y and UV channels of an image into GL textures, then draw the textures onto a Mesh by using a custom shader [suggested by Ayberk Özgür](https://stackoverflow.com/questions/22456884/how-to-render-androids-yuv-nv21-camera-image-on-the-background-in-libgdx-with-o)  which performs color space conversion to RGB format.
+The idea of the enhancement is to load the Y and UV channels of an image into GL textures, then draw the textures onto a Mesh by using a custom shader [@libgdx-yuv-to-rgb] [suggested by Ayberk Özgür](https://stackoverflow.com/questions/22456884/how-to-render-androids-yuv-nv21-camera-image-on-the-background-in-libgdx-with-o) which performs color space conversion to RGB format.
 
 Two classes - `ShaderProgram` and `Mesh` provided by libGDX API will be used to create GL textures and perform the rendering of images in RGB format. Since the shader can be run on the GPU of the Raspberry Pi, the image format conversion speed is enhanced.
 
@@ -98,6 +98,7 @@ The co-processor is able to perform 4 trillion operations per second. The follow
 | SSD MobileNet V1 | 109 | 6.5 |
 | SSD MobileNet V2 | 106 | 7.2 |
 > Remarks:
+
 	- Time is measured in milliseconds per inference.
 	- The models have an input tensor size of 224 x 224
 	- *Desktop CPU: Single Intel® Xeon® Gold 6154 Processor @ 3.00GHz

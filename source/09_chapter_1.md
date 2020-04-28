@@ -2,7 +2,7 @@
 
 ## Background
 
-### Augmented Reality (AR)
+### Augmented Reality
 The definition of AR is that views of physical real-world environments are augmented with superimposed computer-generated images, hence enhancing users’ current perception of the reality.
 
 AR is gaining popularity in these days. Many companies and organizations are developing innovative projects based on AR technology and it has been widely applied in the fields of gaming, education, healthcare, retail and architecture etc.
@@ -35,10 +35,10 @@ This project aims to enhance the Interactive Information Wall at HKBU by further
 The current Interactive Information Wall has the following 2 major problems.
 
 #### *System - Slow Response Time*
-In the index page, user has to raise up their hand to summon the menu. After that, however, the system takes an unknown time, usually more than 3 minutes to respond.
+On the idle screen, user has to raise up the hand to summon the menu. After that, however, the system takes an unknown time, usually more than 3 minutes to respond.
 
 #### *Kinect Sensor - Insensitive to User’s Gestures*
-User has to move the palm in the air to control the cursor. However, the Kinect sensor is a bit insensitive to the palm’s movements, and sometimes a cursor lag will happen. User may encounter difficulties in controlling the cursor and move it to the desired position on the projected screen.
+User has to move the palm in the air to control the cursor. However, the Kinect sensor is a bit insensitive to the palm’s movements, and sometimes a cursor lag will happen. User may encounter difficulties in controlling the cursor and moving it to the desired position on the projected screen.
 
 There is another issue regarding the current design of the "click” event. User has to hold their hand in the air still for about 3 seconds to complete the “click” event. 
 
@@ -48,16 +48,4 @@ There is another issue regarding the current design of the "click” event. User
 
 ![Android Things Lantern - Projection](https://lh3.googleusercontent.com/QGS5ZU5DCoCsjDu2ckgtxKGkwG9JGiGfwmjPQiiLPmLtgOSs-taNnomEUzCb3MIMn-3n8QgX-meU=s300 "banner-lantern-projection")
 
-Inspired by the [Android Things Lantern](https://github.com/nordprojects/lantern) developed by 	Nord Projects, the current Kinect sensor and the system could be replaced by the Android Lantern which can transform any surface into a projected user interface in the hope of shortening the response time by developing an Android application to enhance user experience and allowing user interacting with the virtually projected graphics in a real-time manner by making use of Computer Vision and Machine Learning.
-
-<!-- ## Summary of chapters -->
-
-<!-- 
-For italic, add one * on either side of the text
-For bold, add two * on either side of the text
-For bold and italic, add _** on either side of the text
--->
-
-<!--
-This is a brief outline of what went into each chapter. **Chapter 1** gives a background on duis tempus justo quis arcu consectetur sollicitudin.  **Chapter 2** discusses morbi sollicitudin gravida tellus in maximus.  **Chapter 3** discusses vestibulum eleifend turpis id turpis sollicitudin aliquet.  **Chapter 4** shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius.
--->
+Inspired by the [Android Things Lantern](https://github.com/nordprojects/lantern) [@nordproj-lantern] developed by Nord Projects, the current Kinect sensor and the system could be replaced by the **Android Lantern** which can transform any surface into a projected user interface in the hope of shortening the response time by developing an Android application to enhance user experience and allowing user interacting with the virtually projected graphics in a real-time manner by making use of Computer Vision and Machine Learning.

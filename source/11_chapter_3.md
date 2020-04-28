@@ -3,34 +3,34 @@
 ## Proposed Method
 ### State Diagram of the Android Lantern Interactive Information Wall
 
-![State Machine Diagram of Lantern Information Wall](http://www.plantuml.com/plantuml/png/jLBDIiD04BxlKmmvYkr5yD23b2BOWeeGRzR3aaoQnMIcPATMtzxT_7IRLaCGUajclfzlPcTkHLUoAmlbFWGXYdFUmv9BXAtUO0JQrd-gBitWqLWnj84RC8AbXRsH7CH8WHOuW-WPzpQwXkX15mLMtuvFAKJtk7Kk9P90B3hBO4KPLwKMmnIfdhKNW9NN3W5yJTMDym2SDUrZZTOy2BG5rJLcy9ApCCI5IT4wodHDiHiboS5L2Ry4jZL0Pu8Lt8B5X2crqvxDq5Gd8pG0trU7hz-76HBzOrEE8zeK9mjhYwCJzwNEWtTwwktg7IPtpLKqPp5nl-tpC2qrfIjAJQA5gpKzyIUch-p5bSSSm9tJ24u77U6pqCd7OYV2r6UsWGUOlXsOWJBAR4s-F48wB2pSuk3y7UpISOxESZXG0FPe8v_p53_QEmmNDFxrke5-ePtEaT9TMVm0)
+![State Machine Diagram of Lantern Interactive Information Wall](http://www.plantuml.com/plantuml/png/jLBDIiD04BxlKmmvYkr5yD23b2BOWeeGRzR3aaoQnMIcPATMtzxT_7IRLaCGUajclfzlPcTkHLUoAmlbFWGXYdFUmv9BXAtUO0JQrd-gBitWqLWnj84RC8AbXRsH7CH8WHOuW-WPzpQwXkX15mLMtuvFAKJtk7Kk9P90B3hBO4KPLwKMmnIfdhKNW9NN3W5yJTMDym2SDUrZZTOy2BG5rJLcy9ApCCI5IT4wodHDiHiboS5L2Ry4jZL0Pu8Lt8B5X2crqvxDq5Gd8pG0trU7hz-76HBzOrEE8zeK9mjhYwCJzwNEWtTwwktg7IPtpLKqPp5nl-tpC2qrfIjAJQA5gpKzyIUch-p5bSSSm9tJ24u77U6pqCd7OYV2r6UsWGUOlXsOWJBAR4s-F48wB2pSuk3y7UpISOxESZXG0FPe8v_p53_QEmmNDFxrke5-ePtEaT9TMVm0)
 
-After the Lantern is powered on, it launches the Android application and shows the Home page of the Information Wall. There is 3 items with the title of "News", "Gallery" and "Department Staff Information".
+After the Lantern is powered on, it launches the Android application and shows the Home page of the Information Wall. There are 3 items with the title of "News", "Gallery" and "Department Staff Information".
 
 #### Workflow of Hand Detection Process for the Implementation of Interactive Feature
-![Sequence Diagram of Workflow for Interactive Feature](http://www.plantuml.com/plantuml/png/XL91RW8n3Bpp2d-03_HGKQcgnA77tden6nSYPPF8Ta3yliu6Q4IeE129yNWyu_L655dB75OXfGoOS_0JgayHbWgv5S24Cp72-XK-qSUtIVtHwnbUh92rC056y3FkoRXOgwXqQJB4qOZrEbLt6vKuCzbhifdJH2AZPj_MursxmRtOUZHjXS8H3XWTE2DDIrecAK7bwdVK7Kr_RUiA0Y63SOu-5McgFhgwnCITHsFRlme4lR2aZMyx7kNlRF-OAkY1O4UYZzs3WT-HQKfiyYeGKlkMfl__5hl4O-rnQCTukezgR0f24DCORr5AkTc-kJAAiHLY2M5XZDC-6FSpHRMPSl8w7I2ta-W3tLY6Fui3DtALVqV57Ggrgs1FHre6WBF2_PGhkU5_lUlUv_MyUWL7eyRefItMImvu7hgVvBJc1QFeLksjluqzPGw_)
+![Sequence Diagram of Workflow for Interactive Feature](http://www.plantuml.com/plantuml/png/XL91RW8n3Bpp2d-03_HGKQcgnA77tden6nSYPPF8Ta3yliu6Q4IeE129yNWyu_L655dB75OXfGoOS_0JgayHbWgv5S24Cp72-XK-qSUtIVtHwnbUh92rC056y3FkoRXOgwXqQJB4qOZrEbLt6vKuCzbhifdJH2AZPj_MursxmRtOUZHjXS8H3XWTE2DDIrecAK7bwdVK7Kr_RUiA0Y63SOu-5McgFhgwnCITHsFRlme4lR2aZMyx7kNlRF-OAkY1O4UYZzs3WT-HQKfiyYeGKlkMfl__5hl4O-rnQCTukezgR0f24DCORr5AkTc-kJAAiHLY2M5XZDC-6FSpHRMPSl8w7I2ta-W3tLY6Fui3DtALVqV57Ggrgs1FHre6WBF2_PGhkU5_lUlUv_MyUWL7eyRefItMImvu7hgVvBJc1QFeLksjluqzPGw_) \
 
 The camera module keeps capturing image. For each image captured, the MainActivity passes it to an Interpreter for hand detection.
 
-A hand detection ML model is trained to recognize a hand. The interpreter utilizes the model to conduct the inference in each image and returns the detection results to the MainActivity after the inference process completes. If there is more than one results, the MainActivity selects the best result and records the result's location on the projected area.
+A hand detection model is trained to recognize a hand. The interpreter utilizes the model to conduct the inference in each image and returns the detection results to the MainActivity after the inference process completes. If there are more than one results, the MainActivity selects the best result and records the result's location on the projected area.
 
 When a user's hand moves into the projected area of the Lantern, a hand indicator is shown on the UI which visualizes the location of the hand on the projected area for the user to navigate the pages in the Android application. When the user's hand moves away from the projected area of the Lantern, the hand indicator disappears.
 
-To trigger a "click" event, the user first controls the hand indicator by waving his/her hand, then moves the hand indicator to the desired position on the UI and finally moves away his/her hand from the projected area of the Lantern. The "click" event is triggered based on last position where the hand indicator appeared on the UI.
+To trigger a "click" event, the user first controls the hand indicator by waving his/her hand, then moves the hand indicator to the desired position on the UI and finally moves away his/her hand from the projected area of the Lantern. The "click" event is triggered based on the last position where the hand indicator appeared on the UI.
 
 In the Home page, if the last position of the hand indicator was shown on the News item, the News item is clicked and the Android application navigates to the News landing page where there are 3 titles of the news articles shown on the page. An item of the news articles is clicked if the last position of the hand indicator was shown on it, bringing user to the details page of the selected news article. The user can navigate up to the previous page or Home page by moving the hand indicator to the "Back" button or the "Go Home" button on the top navigation bar. This "clicking" and navigation processes are also applied to the pages of Department Staff Information.
 
 The Gallery is a page for photo slideshow only. There are a total of 6 photos and each of them stays on the UI for 6 seconds before it is switched to another photo. User can "click" on the "Back" button or "Go Home" button to return to the Home page.
 
-Google Cloud Firestore is being used to be the database of the Android application storing all the data of the New, Gallery and the Department Staff Information pages. It is a NoSQL database where data is called document and referenced using a path. It also provides API that could be used in the Android application to retrieve data with ease.
+**Google Cloud Firestore** is being used to be the database of the Android application storing all the data of the New, Gallery and the Department Staff Information pages. It is a NoSQL database where data is called document and referenced using a path. It also provides API that could be used in the Android application to retrieve data with ease.
 
 ## Implementation
 ### User Interface of Android application
 #### Fragments
 
-The News page, Gallery page, Department Staff Information page and their inner pages exist as fragments in the Android application. Figure 3.3 shows a graphical version of the navigation graph in `mobile_navigation.xml`.
+The News page, Gallery page, Department Staff Information page and their inner pages exist as fragments in the Android application. A graphical version of the navigation graph in `mobile_navigation.xml` is shown below.
 
-![Navigation Graph of Fragments](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600)
+![Navigation Graph of Fragments](https://lh3.googleusercontent.com/RIIW5xZDELdtGzN_w37u6HRcE0gJkwUHkuB4XcPa7TgojR9AWzjJVIesF-OYpYIms51MwtsVJZ-_=s600) \
 
 In `activity_main.xml`, all the layout of the fragments defined in `mobile_navigation.xml` will be connected to the fragment layout below so that user can navigate around the Android application to view different pages.
 ```xml
@@ -87,7 +87,11 @@ The MVVM stands for Model-View-ViewModel. The main advantage of using the MVVM a
 
 In the Android application, I have created ViewModel classes which declare all the relevant data to be shown in the page layouts. For each page, say the News landing page, there are one fragment class, a XML layout file and a ViewModel class to achieve data binding.
 
-I have applied one-way data binding in the Android application. The fragment class contains all the programming logic including retrieving data from the database but it will not directly interact with the UI components in the layout. Instead, a ViewModel class instance is created in the fragment. The ViewModel class, together with a fragment-specific data binding class, can be seen as the middle persons responsible for the communication between the fragment class and the XML layout file.
+I have applied one-way data binding in the Android application.
+
+![Data Binding with MVVM architecture](https://lh3.googleusercontent.com/6Fj_x7RiDjGSH2SUR99hkVyj9aQrw3KfGL-O0bwr-n7tDKgARwUgart6rzzs9jn8SpkL5Wm3edl8 "Data Binding with MVVM architecture") \
+
+The fragment class contains all the programming logic including retrieving data from the database but it will not directly interact with the UI components in the layout. Instead, a ViewModel class instance is created in the fragment. The ViewModel class, together with a fragment-specific data binding class, can be seen as the middle persons responsible for the communication between the fragment class and the XML layout file.
 
 For example, in `NewsFragment.kt`,
 ```kotlin
@@ -313,7 +317,7 @@ The training process of a hand detection model based on a pre-trained Object Det
 
 	To start training a hand detection model, I have run the `object_detection/model_main.py`, or `object_detection/legacy/train.py` plus `object_detection/legacy/eval.py` under the [TensorFlow models' object detection repository](https://github.com/tensorflow/models/tree/master/research). The `model_main.py` is the newer Python script for training of object detection model. This program enables the model training and evaluation to be done at the same time. In another words, the training of model starts first, then after a certain period of time, the training process is stopped and evaluation of the model starts. After the evaluation is done, the training process starts again. The training and evaluation processes are done alternatively throughout until the final step of the model training is reached. If legacies are used for the hand detection model training, I have to run the `train.py` first, following by the `eval.py` so as to achieve training and evaluating the model at the same time.
 
-After the training process finished, I have to export the final model checkpoint file to an inference graph by running `object_detection/export_tflite_ssd_graph.py` and `tflite_graph.pb` and `tflite_graph.pbtxt` are generated. The frozen inference graph is then converted into TFLite format by using the command `tflite_convert`.
+After the training process has finished, I have to export the final model checkpoint file to an inference graph by running `object_detection/export_tflite_ssd_graph.py` and `tflite_graph.pb` and `tflite_graph.pbtxt` are generated. The frozen inference graph is then converted into TFLite format by using the command `tflite_convert`.
 ```
 tflite_convert \
 --output_file=".../hand_detect.tflite" \
@@ -331,7 +335,7 @@ tflite_convert \
 --allow_nudging_weights_to_use_fast_gemm_kernel=true \
 --allow_custom_ops
 ```
-It is notable that the `input_shapes` of the pre-trained SSD MobileNet model is set to be 300 x 300, meaning that an image which is going to be recognized should have the same size. As my hand detection model is re-trained from a pre-trained model, I have to follow the configuration of the pre-trained model for my hand detection model.
+It is notable that the `input_shapes` of the pre-trained SSD MobileNet model is set to be 300 x 300, meaning that an image which is going to be recognized should have the same dimension. As my hand detection model is re-trained from a pre-trained model, I have to follow the configuration of the pre-trained model for my hand detection model.
 
 ####  Problems of University of Oxford's Hand Dataset
 I have first tried using the hand dataset prepared by University of Oxford to train a hand detection model. This dataset has 4,070 images for model training and 822 images for model evaluation.
@@ -344,21 +348,18 @@ I first started the model training process in a Docker machine installed on Macb
 The target number of training steps is 6,000 and Python 2.7 was used to execute the Python script. The training was started without any error, however, during the model evaluation, I found that the detection precision was always zero. VirtualBox is a software used for virtualization, hence making the Docker container becoming a virtual machine instead. As hardware is virtualized under virtual machines, I believed that there were some problems or errors occurred during the accessing of the computer’s hardware resources.
 
 After I had started the training using Python 3.6 on Macbook Pro, the `TypeError: object of type <class 'numpy.float64'> cannot be safely interpreted as an integer` occurred. I suspected that this is caused by a few problems.
+
 - The arithmetic operation of division is different between Python 2 and Python 3.
 	In Python 2, the division operation discards the decimal places and result is in the type of `int`.
-
-	```python
+	```
 	1 / 200
 	# The result is 0.
 	```
-
 	In Python 3, the result division operation is in the type of `float`.
-
-	```python
+	```
 	1 / 200
 	# The result is 0.005.
 	```
-
 	As I was using `Python3.6` to run the model training Python script, this error occurred.
 - The `numpy` version being used. I have installed the latest `numpy` version (1.18.0), however, the float64 is not supported starting from `numpy` version 1.12.0.
 - TensorFlow Lite operations target at float32 for floating-point inference but perhaps `numpy.float64` had been used to generate TFRecord files.
@@ -366,8 +367,8 @@ After I had started the training using Python 3.6 on Macbook Pro, the `TypeError
 Besides the problems that different versions of libraries and dependencies are being used, I have discovered some problems regarding the quality of images in this hand dataset.
 
 - Hands in the images are quite small which cannot be seen clearly.
--  Images vary in size. The dimensions of the images are any combination ranging from 90 x 100 to 1280 x 1024 pixels.
-- The resolution of most of images that are used for training are low. Many of them have dimensions below 500 x 500 pixels.
+- Images vary in dimension. The dimensions of the images are any combination ranging from 90 x 100 to 1280 x 1024 pixels.
+- Most of the images that are used for training have low resolution. Many of them have dimensions below 500 x 500 pixels.
 
 | Images | Dimensions |
 |:--:|:--:|
@@ -389,7 +390,7 @@ The [`egohands_dataset_clean.py`](https://github.com/victordibia/handtracking/bl
 
 - reading the `polygons.mat` files which contains the annotations of the hand bounding boxes in all the images,
 - renaming all the filename of the images to make sure each filename is unique, and
-- spliting the dataset, i.e. images, into two folders, around 83% for training and  10% for testing.
+- spliting the dataset, i.e. images, into two folders, around 83% for training and 10% for testing.
 
 Then, I have to run `generate_tfrecord.py` to generate two TFRecord files, `train.record` and `test.record` for model training and evaluation respectively. The hand detection model training and evaluation run smoothly without any error using Python 2.7 and the SSD MobileNet V1/V2 pre-trained model. I am also able to frozen the inference graph of the model and convert it in TFLite format.
 
@@ -460,7 +461,7 @@ Even if `previewRequestBuilder.addTarget(surface)` worked well and there was a `
 
 ***Solution: Use of Camera API instead of Camera2 API*** 
 
-After reviewing the [TensorFlow Object Detection demo project](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android), I found that I am able to obtain the byte array of an image captured by a preview view from the `onPreviewFrame` callback method provided in `Camera.PreviewCallback` class which belongs to the Camera API.
+After reviewing the [TensorFlow Object Detection demo project](https://github.com/tensorflow/examples/tree/master/lite/examples/object_detection/android) [@tensorflow-demo-app], I found that I am able to obtain the byte array of an image captured by a preview view from the `onPreviewFrame` callback method provided in `Camera.PreviewCallback` class which belongs to the Camera API.
 
 The parameter `bytes` is the image byte buffer and `addCallbackBuffer(bytes)` enables the callback method being called continuously whenever an image is available on the preview view.
 ```kotlin
@@ -558,7 +559,8 @@ In `activity_main.xml`,
 In `TrackingView.kt`,
 ```kotlin
 fun drawHandSpot(x: Float, y: Float) {
-	...
+	this.x = x
+	this.y = y
 }
 
 override fun onDraw(canvas: Canvas) {
@@ -643,14 +645,14 @@ private fun processImage() {
 }
 ```
 
-## Additional Python Scripts for Hand Detection Model Training
-### Auto CSV and TFRecord files Generator for TensorFlow Hand Detection Model Training
+## Additional Python Scripts for Building Custom Hand Dataset
+### Auto Hand Dataset Generator
 The Generator is a number of Python scripts specialized for automatically detecting **a hand per frame** from a MP4 video using OpenCV API, saving the frames in JPEG format and generating CSV and TFRecord files for hand detection model training and evaluation.
 
 #### Motivations
 ***Flaws in Egohands Dataset***
 
-For the Egohands dataset, the hand gestures captured in most of the images do not exactly suit my need for hand detection on the Interactive Information Wall. These gestures include:
+For the Egohands dataset, the gestures captured in most of the images do not exactly suit my need for hand detection on the Interactive Information Wall. These gestures include:
 
 - holding the cards while playing card games
 - holding the chess pieces while playing chess
@@ -662,11 +664,13 @@ For the Egohands dataset, the hand gestures captured in most of the images do no
 
 With these gestures, a few fingers disappear from the first person view and fingers are curled inward. It turns out that a gesture that is holding something in the hand has a higher confidence, i.e. easier to be detected as hand. However, images with gestures of clicking something are what I am looking for as I want to train a hand detection model to enable the user clicking the virtually projected graphics on the wall. Therefore, I decided to collect images of open hands with either index fingers or all fingers pointing upward.
 
+<br>
+
 ***Get Rid of  Manual Annotation of Hands by using OpenCV API for Hand Detection in Video Frames***
 
 At present, we have to manually annotate the hands in each image by using image annotation tools like [LabelImg](https://github.com/tzutalin/labelImg) and this is time consuming.
 
-Inspired by the [Real-Time Hand Gesture Detection project](https://github.com/orensbruli/HandDetection) written in Python, I learnt that the OpenCV API supports hand detection in video frames and bounding box is drawn for each frame in which a hand is detected. Thus, I have modified the project's `HandDetection.py` and `hand.py` scripts in order to build my own dataset, that is collecting images of hands from video frames and generating CSV files for hand detection model training and evaluation.
+Inspired by the [Real-Time Hand Gesture Detection project](https://github.com/orensbruli/HandDetection) [@opencv-py-hand-detection] written in Python, I learnt that the OpenCV API supports hand detection in video frames and bounding box is drawn for each frame in which a hand is detected. Thus, I have modified the project's `HandDetection.py` and `hand.py` scripts in order to build my own dataset, that is collecting images of hands from video frames and generating CSV files for hand detection model training and evaluation.
 
 #### Modification of the Python scripts in Real-Time Hand Gesture Detection project
 In `Hand.py`, I am able to obtain the two coordinates of the annotation of a detected hand in each video frame, i.e. (`xmin`, `ymax`) and (`xmax`, `ymin`) from the function `get_roi_to_use(self, frame)` which calculates the Region of Interest (ROI) of a detected hand in a video frame.
