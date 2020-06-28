@@ -6,53 +6,24 @@
 \noindent
 
 \begin{center}
-
-\Large
-Declaration
+Contact Information
 \end{center}
 
 \vspace*{1.5cm}
 
-I hereby declare that all the work done in this Final Year Project is of my independent effort. I also certify that I have never submitted the idea and product of this Final Year Project for academic or employment credits.
+WONG Yin Wai, Natalie \\
+Author \\
+Email: 18207200@life.hkbu.edu.hk
+
+\itab{Supervisor}
 
 \vspace*{2.5cm}
-
-$\rule{5cm}{0.15mm}$ \newline
-WONG Yin Wai, Natalie
-
-\vspace*{2.5cm}
-
-Date: $\rule{4cm}{0.15mm}$
-
-\vspace*{\fill}
-\pagenumbering{gobble}
-
-\newpage
-
-\noindent
-
-\begin{center}
-Hong Kong Baptist University\\ 
-Computer Science Department
-\end{center}
-
-\vspace*{1.5cm}
-
-We hereby recommend that the Final Year Project submitted by WONG Yin Wai, Natalie entitled "Interactive Information Wall with Android Lantern" be accepted in partial fulfillment of the requirements for the degree of Bachelor of Science (Honours) in Computer Science.
-
-\vspace*{2.5cm}
-
-\itab{$\rule{5cm}{0.15mm}$} \tab{$\rule{5cm}{0.15mm}$}
 
 \itab{Dr. CHOY, Martin Man Ting} \tab{Dr. HUANG, Xin}
 
-\itab{Supervisor} \tab{Observer} 
+\itab{Supervisor} \tab{Observer}
 
-
-\vspace*{2.5cm}
-
-\itab{Date: $\rule{4cm}{0.15mm}$}  \tab{Date: $\rule{4cm}{0.15mm}$}
-
+\itab{Email: mtchoy@comp.hkbu.edu.hk} \tab{Email: xinhuang@comp.hkbu.edu.hk}
 
 
 \pagenumbering{gobble}

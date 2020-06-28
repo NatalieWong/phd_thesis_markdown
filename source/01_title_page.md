@@ -54,7 +54,8 @@ and add the centred logo
 
         \normalsize
         \textbf{
-            Hong Kong Baptist University
+            Hong Kong Baptist University \\
+            Department of Computer Science
         }
 
         \vspace{1.5cm}
