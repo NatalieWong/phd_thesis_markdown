@@ -15,8 +15,6 @@ WONG Yin Wai, Natalie \\
 Author \\
 Email: 18207200@life.hkbu.edu.hk
 
-\itab{Supervisor}
-
 \vspace*{2.5cm}
 
 \itab{Dr. CHOY, Martin Man Ting} \tab{Dr. HUANG, Xin}
